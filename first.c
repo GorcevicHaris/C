@@ -21,7 +21,7 @@
 //==========================================================================================
 // int main()
 // {
-//     char ime[20], prezime[20];
+//     char ime, prezime;
 //     printf("Unesi ime: ");
 //     scanf("%s", ime);
 //     printf("Unesi prezime: ");
@@ -52,4 +52,39 @@
 //     printf("Aritmeticka sredina je %.2f\n", (float)sum / count);
 //     return 0;
 // }
-//===================================================================================================
+//===========================================================================
+// int main()
+// {
+//     int i;
+//     for (i = 1; i < 100; i++)
+//     {
+//         printf("%d\n", i);
+//     }
+//     return 0;
+// }
+//================================================================
+int main()
+{
+    int n;
+    printf("Unesite koliko zelite elemenata u niz da imate \n");
+    scanf("%d", &n);
+
+    int arr[n];
+    int sum = 0;
+    int max = 0;
+
+    printf("Unesi %d celih brojeva:\n", n);
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("Unesite vase brojeve: ");
+        scanf("%d\n", &arr[i]);
+        sum = sum + arr[i];
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+    printf("Prosek %d\n", sum / n);
+    printf("Ovo je najveci broj %d\n", max);
+}
