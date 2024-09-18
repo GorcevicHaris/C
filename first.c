@@ -148,22 +148,28 @@ int main()
     printf("unseite koliko zelite brojeva");
     scanf("%d", &n);
     int arr[n];
+    int even[n], odd[n];
+    int evenCount = 0, oddCount = 0;
 
     for (int i = 0; i < n; i++)
     {
-        printf("Unesite brojeve\n");
+        printf("Unesite broj %d: ", i + 1);
         scanf("%d", &arr[i]);
-    }
-    for (int i = 0; i < n; i++)
-    {
         if (arr[i] % 2 == 0)
         {
-            printf("%d", arr[i]);
+            even[evenCount++] = arr[i];
         }
         else
         {
-            printf("Nema brojeva koji su parni \n");
+            odd[oddCount++] = arr[i];
         }
     }
+    printf("Neparni brojevi su : \n");
+    for (int i = 0; i < oddCount; i++)
+    {
+        printf("%d \n", odd[i]);
+    }
+    printf("%d ovo je odd count \n", oddCount);
+
     return 0;
 }
