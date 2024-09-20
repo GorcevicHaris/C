@@ -155,6 +155,7 @@ int main()
     {
         printf("Unesite broj %d: ", i + 1);
         scanf("%d", &arr[i]);
+        printf(" Ovo je even[count]\n");
         if (arr[i] % 2 == 0)
         {
             even[evenCount++] = arr[i];
@@ -170,6 +171,13 @@ int main()
         printf("%d \n", odd[i]);
     }
     printf("%d ovo je odd count \n", oddCount);
+
+    printf("Parni brojevi su : \n");
+    for (int i = 0; i < evenCount; i++)
+    {
+        printf("%d", even[i]);
+    }
+    printf("%d ovo je even count \n", evenCount);
 
     return 0;
 }
