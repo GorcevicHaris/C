@@ -142,42 +142,68 @@
 //     return 0;
 // }
 //==================================================================================================
-int main()
-{
-    int n;
-    printf("unseite koliko zelite brojeva");
-    scanf("%d", &n);
-    int arr[n];
-    int even[n], odd[n];
-    int evenCount = 0, oddCount = 0;
+// Zadatak 8 odvoji parne i neparne brojeve
+// int main()
+// {
+//     int n;
+//     printf("unseite koliko zelite brojeva");
+//     scanf("%d", &n);
+//     int arr[n];
+//     int even[n], odd[n];
+//     int evenCount = 0, oddCount = 0;
 
-    for (int i = 0; i < n; i++)
-    {
-        printf("Unesite broj %d: ", i + 1);
-        scanf("%d", &arr[i]);
-        printf(" Ovo je even[count]\n");
-        if (arr[i] % 2 == 0)
-        {
-            even[evenCount++] = arr[i];
-        }
-        else
-        {
-            odd[oddCount++] = arr[i];
-        }
-    }
-    printf("Neparni brojevi su : \n");
-    for (int i = 0; i < oddCount; i++)
-    {
-        printf("%d \n", odd[i]);
-    }
-    printf("%d ovo je odd count \n", oddCount);
+//     for (int i = 0; i < n; i++)
+//     {
+//         printf("Unesite broj %d: ", i + 1);
+//         scanf("%d", &arr[i]);
+//         if (arr[i] % 2 == 0)
+//         {
+//             even[evenCount++] = arr[i];
+//         }
+//         else
+//         {
+//             odd[oddCount++] = arr[i];
+//         }
+//     }
+//     printf("Neparni brojevi su : \n");
+//     for (int i = 0; i < oddCount; i++)
+//     {
+//         printf("%d \n", odd[i]);
+//     }
+//     printf("%d ovo je odd count \n", oddCount);
 
-    printf("Parni brojevi su : \n");
-    for (int i = 0; i < evenCount; i++)
-    {
-        printf("%d", even[i]);
-    }
-    printf("%d ovo je even count \n", evenCount);
+//     printf("Parni brojevi su : \n");
+//     for (int i = 0; i < evenCount; i++)
+//     {
+//         printf("%d", even[i]);
+//     }
+//     printf("%d ovo je even count \n", evenCount);
 
-    return 0;
-}
+//     return 0;
+// }
+//===============================================================================
+// // 9 Zadatak Fibonacijev niz primer: 0,1,1,2,3,5,8
+// int main()
+// {
+//     int n;
+//     printf("unesite koliko zelite brojeva \n");
+//     scanf("%d", &n);
+//     int arr[n];
+
+//     arr[0] = 1;
+//     if (n > 1)
+//     {
+//         arr[1] = 1;
+//     }
+
+//     for (int i = 2; i < n; i++)
+//     {
+//         arr[i] = arr[i - 1] + arr[i - 2];
+//     }
+//     printf("Fibijancijev niz \n ");
+//     for (int i = 0; i < n; i++)
+//     {
+//         printf(" %d ", arr[i]);
+//     }
+//     printf("\n");
+// }
