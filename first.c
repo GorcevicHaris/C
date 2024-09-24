@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 // Zadatak 1
 //  int main()
 //  {
@@ -207,3 +209,20 @@
 //     }
 //     printf("\n");
 // }
+//=============================================================================
+// 10 zadatak palindrom
+int main()
+{
+    char name[] = "haris";
+    int length = strlen(name);
+    int counter = length;
+
+    for (int i = 0; i < length / 2; i++)
+    {
+        counter--;
+        int temp = name[i];
+        name[i] = name[counter];
+        name[counter] = temp;
+    }
+    printf("%s", name);
+}
