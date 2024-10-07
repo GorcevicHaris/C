@@ -257,15 +257,55 @@
 //     return 0;
 // }
 //================================================================================================
-int main()
-{
-    int n;
-    printf("Unesite koliko zelite brojeva");
-    scanf("%d", &n);
-    int array[n];
-    array[0] = 1;
-    array[1] = 1;
-    for (int i = 0; i < n; i++)
-    {
-    }
-}
+// // 12 Zadatal fabijancijev niz opet
+// int main()
+// {
+//     int n;
+//     printf("Unesite koliko zelite brojeva");
+//     scanf("%d", &n);
+//     int array[n];
+//     int number;
+//     array[0] = 1;
+//     array[1] = 1;
+//     for (int i = 2; i < n; i++)
+//     {
+//         array[i] = array[i - 1] + array[i - 2];
+//     }
+//     printf("Ispod se nalazi fabijancijev niz\n");
+//     for (int i = 0; i < n; i++)
+//     {
+//         printf("%d", array[i]);
+//     }
+//     return 0;
+// }
+//================================================================================================
+// // Zadatak 13 pronaci savrsene brojeve  tjst npr 6 jer se deli sa 1 2 i 3 i to je ukupno 6
+// int main()
+// {
+//     int n;
+//     int suma = 0;
+
+//     printf("unesi brojeve");
+//     scanf("%d", &n);
+
+//     for (int i = 1; i < n; i++)
+//     {
+//         if (n % i == 0)
+//         {
+//             suma += i;
+//         }
+//     }
+
+//     printf("suma je \n");
+//     printf("%d", suma);
+
+//     if (n == suma)
+//     {
+//         printf("broj je savrsen");
+//     }
+//     else
+//     {
+//         printf("broj nije savrsen");
+//     }
+// }
+//================================================================================================
