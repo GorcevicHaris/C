@@ -211,18 +211,47 @@
 // }
 //=============================================================================
 // 10 zadatak palindrom
+// int main()
+// {
+//     char name[] = "haris";
+//     int length = strlen(name);
+//     int counter = length;
+
+//     for (int i = 0; i < length / 2; i++)
+//     {
+//         counter--;
+//         int temp = name[i];
+//         name[i] = name[counter];
+//         name[counter] = temp;
+//     }
+//     char newName[sizeof(name)];
+//     strcpy(newName, name);
+
+//     if (name == newName)
+//     {
+//         printf("polindrom su");
+//     }
+//     else
+//     {
+//         printf("nisu polindrom");
+//     }
+//     printf("Originalni string: %s\n", name);
+//     printf("Kopirani string: %s\n", newName);
+// }
+//============================================================================================
 int main()
 {
-    char name[] = "haris";
-    int length = strlen(name);
-    int counter = length;
+    int stepenice = 40;
+    int koraci = 0;
 
-    for (int i = 0; i < length / 2; i++)
+    for (int i = 0; i < stepenice; i++)
     {
-        counter--;
-        int temp = name[i];
-        name[i] = name[counter];
-        name[counter] = temp;
+        if (i % 4 == 0)
+        {
+            continue;
+        }
+        koraci++;
     }
-    printf("%s", name);
+    printf("Slon je napravio %d koraka da pređe %d stepenica.\n", koraci, stepenice);
+    return 0;
 }
