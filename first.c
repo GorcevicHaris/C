@@ -239,19 +239,33 @@
 //     printf("Kopirani string: %s\n", newName);
 // }
 //============================================================================================
+// Zadatak 11 slon preskace svaku 4 stepenicu
+// int main()
+// {
+//     int stepenice = 40;
+//     int koraci = 0;
+
+//     for (int i = 0; i < stepenice; i++)
+//     {
+//         if (i % 4 == 0)
+//         {
+//             continue;
+//         }
+//         koraci++;
+//     }
+//     printf("Slon je napravio %d koraka da pređe %d stepenica.\n", koraci, stepenice);
+//     return 0;
+// }
+//================================================================================================
 int main()
 {
-    int stepenice = 40;
-    int koraci = 0;
-
-    for (int i = 0; i < stepenice; i++)
+    int n;
+    printf("Unesite koliko zelite brojeva");
+    scanf("%d", &n);
+    int array[n];
+    array[0] = 1;
+    array[1] = 1;
+    for (int i = 0; i < n; i++)
     {
-        if (i % 4 == 0)
-        {
-            continue;
-        }
-        koraci++;
     }
-    printf("Slon je napravio %d koraka da pređe %d stepenica.\n", koraci, stepenice);
-    return 0;
 }
