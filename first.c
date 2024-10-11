@@ -287,25 +287,25 @@
 
 //     printf("unesi brojeve");
 //     scanf("%d", &n);
-
-//     for (int i = 1; i < n; i++)
+//     for (int y = 2; y < n; y++)
 //     {
-//         if (n % i == 0)
+//         suma = 0;
+//         for (int i = 1; i < y; i++)
 //         {
-//             suma += i;
+//             if (y % i == 0)
+//             {
+//                 suma += i;
+//             }
+//         }
+//         if (y == suma)
+//         {
+//             printf("da%d\n ", y);
+//         }
+//         else
+//         {
+//             printf("ne%d\n", y);
 //         }
 //     }
-
-//     printf("suma je \n");
-//     printf("%d", suma);
-
-//     if (n == suma)
-//     {
-//         printf("broj je savrsen");
-//     }
-//     else
-//     {
-//         printf("broj nije savrsen");
-//     }
+//     return 0;
 // }
 //================================================================================================
