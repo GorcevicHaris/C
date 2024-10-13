@@ -309,3 +309,80 @@
 //     return 0;
 // }
 //================================================================================================
+// Zadatak 14 Even and odd number first example
+// int main()
+// {
+//     int a;
+//     int odd = 0, even = 0;
+
+//     printf("unesi koliko zelis brojeva \n");
+//     scanf("%d", &a);
+//     int arr[a];
+
+//     printf("Unesi brojeve \n");
+//     for (int i = 0; i < a; i++)
+//     {
+//         scanf("%d", &arr[i]);
+//     }
+
+//     for (int y = 0; y < a; y++)
+//     {
+//         if (arr[y] % 2 == 0)
+//         {
+//             even = arr[y];
+//             printf("parni su %d\n ", even);
+//         }
+//         else
+//         {
+//             odd++;
+//             odd = arr[y];
+//             printf("nisu %d\n", odd);
+//         }
+//     }
+//     printf("odd %d\n", odd);
+// }
+//================================================================================================
+// // Even and odd numbers second better solution becasue even or odd ++ mean that u can
+// // add after how much did u have odd or even numbers
+// int main()
+// {
+//     int a;
+//     int odd = 0, even = 0;
+
+//     printf("unesi koliko zelis brojeva \n");
+//     scanf("%d", &a);
+//     int arr[a];
+
+//     printf("Unesi brojeve \n");
+//     for (int i = 0; i < a; i++)
+//     {
+//         scanf("%d", &arr[i]);
+//     }
+
+//     for (int y = 0; y < a; y++)
+//     {
+//         if (arr[y] % 2 == 0)
+//         {
+//             even++;
+//             printf("parni su %d\n ", even);
+//         }
+//         else
+//         {
+//             odd++;
+//             printf("nisu %d\n", odd);
+//         }
+//     }
+//     printf("odd %d\n", odd);
+// }
+//=========================================================================================
+// int main()
+// {
+//     int i;
+
+//     for (int i = 0; i < 5; i++)
+//     {
+//         printf("%d\n", i);
+//     }
+//     getchar(); //-- kada ovo imamo kada se izvrsi nas kod u terminalu ne zavrsi se sve dok ne pretisnemo taster neki npr enter
+// }
+//=========================================================================================
