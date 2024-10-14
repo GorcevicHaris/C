@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 // Zadatak 1
 //  int main()
 //  {
@@ -401,3 +402,74 @@
 //     }
 // }
 //=========================================================================================
+// int main()
+// {
+//     double broj, koren;
+
+//     // Unos broja od korisnika
+//     printf("Unesite broj: ");
+//     scanf("%lf", &broj);
+
+//     // Provera da li je broj pozitivan
+//     if (broj < 0)
+//     {
+//         printf("Korenovanje negativnih brojeva nije moguće u realnim brojevima.\n");
+//     }
+//     else
+//     {
+//         // Izračunavanje kvadratnog korena
+//         koren = sqrt(broj);
+//         printf("Kvadratni koren broja %.2lf je %.2lf\n", broj, koren);
+//         // %lf označava da se radi o double vrednosti. a .2 oznacava koliko hocemo decimala nakon broja
+//     }
+
+//     return 0;
+// }
+//==========================================================
+// // implementirati program koji izracunava povrsinu kvadrata
+
+// int main()
+// {
+//     int a, b;
+//     printf("unesi i a b \n");
+//     scanf("%d", &a);
+//     printf("unesi  b \n");
+//     scanf("%d", &b);
+
+//     printf("%d", a * a);
+// }
+//=========================================================================
+// implementirat obim i kvadrata a * 4 obim
+//==========================================================================
+//  Zadatak 15 implementirati funkciju koja racuna duzinu hipotenuze kod pravouglog trougla
+// int main()
+// {
+//     double a, b, c;
+//     printf("unesi a i b");
+//     scanf("%lf %lf", &a, &b);
+//     c = sqrt(a * a + b * b);
+//     printf("duzina hipotenuze pravouglog trougla je %.2lf\n", c);
+//     return 0;
+// }
+//=========================================================================
+// // Drugi primer sa funkcijom za racunanje duzine hipotenuze kod pravouglog trougla
+// double calculateHypotenuse(double a, double b)
+// {
+//     return sqrt(a * a + b * b);
+// }
+// int main()
+// {
+//     double a, b, c;
+
+//     printf("unesi a i b");
+
+//     scanf("%lf %lf", &a, &b);
+
+//     c = calculateHypotenuse(a, b);
+
+//     printf("Duzina hipotenuze pravouglog trougla je %.2lf\n", c);
+// }
+//=========================================================================
+int main()
+{
+}
