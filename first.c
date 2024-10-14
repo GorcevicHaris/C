@@ -470,6 +470,28 @@
 //     printf("Duzina hipotenuze pravouglog trougla je %.2lf\n", c);
 // }
 //=========================================================================
-int main()
-{
-}
+// Zadatak 16 Написати програм који рачуна и на стандардном излазу приказује површину круга полупречника 5.
+// int main()
+// {
+//     double r = 3;
+//     double povrsina = M_PI * r * r;
+//     printf("Povrsina kruga sa poluprecnikom %.2f je: %.2f\n", r, povrsina);
+//     return 0;
+// }
+//=============================================================================
+// // Zadatak 17 Написати програм који рачуна и на стандардном излазу приказује површину круга
+// // произвољног полупречника.
+
+// double PI_semicounductor(double r)
+// {
+//     return r * r * M_PI;
+// }
+
+// int main()
+// {
+//     double r;
+//     printf("unesit poluprecnik \n");
+//     scanf("%lf", &r);
+//     double povrsina = PI_semicounductor(r);
+//     printf("povrsina je %.2lf\n", povrsina);
+// }
