@@ -386,3 +386,18 @@
 //     getchar(); //-- kada ovo imamo kada se izvrsi nas kod u terminalu ne zavrsi se sve dok ne pretisnemo taster neki npr enter
 // }
 //=========================================================================================
+// int main()
+// {
+//     for (int i = 0; i < 15; i++)
+//     {
+//         if (i % 2 == 0)
+//         {
+//             printf("parni su %d\n", i);
+//         }
+//         else
+//         {
+//             printf(" nisu parni  %d\n", i);
+//         }
+//     }
+// }
+//=========================================================================================
