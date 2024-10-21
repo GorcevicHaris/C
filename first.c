@@ -206,7 +206,7 @@
 //     printf("Fibijancijev niz \n ");
 //     for (int i = 0; i < n; i++)
 //     {
-//         printf(" %d ", arr[i]);
+//         printf("%d", arr[i]);
 //     }
 //     printf("\n");
 // }
@@ -495,3 +495,72 @@
 //     double povrsina = PI_semicounductor(r);
 //     printf("povrsina je %.2lf\n", povrsina);
 // }
+//=============================================================================
+// fibonacijev niz
+// int main()
+// {
+//     int n, suma;
+//     printf("unesi broj");
+//     scanf("%d", &n);
+//     int arr[n];
+//     arr[0] = 1;
+//     if (arr[n] > 1)
+//     {
+//         arr[1] = 1;
+//     }
+//     for (int i = 2; i < n; i++)
+//     {
+//         arr[i] = arr[i - 1] + arr[i - 2];
+//     }
+//     printf("tu je niz");
+
+//     for (int i = 0; i < n; i++)
+//     {
+//         printf("%d\n", arr[i]);
+//     }
+// }
+//==============================================================
+// int main()
+// {
+//     int a;
+//     scanf("%d", a);
+//     if (a == 5)
+//     {
+//         printf("jeste");
+//     }
+//     else
+//     {
+//         printf("nije");
+//     }
+// }
+//==================================================================================
+// int main()
+// {
+//     int a, b, c;
+//     scanf("%d %d %d", &a, &b, &c);
+//     if (a > b && a > c)
+//     {
+//         printf("a je najveci");
+//     }
+//     else if (b > c && b > a)
+//     {
+//         printf("b je najbeci");
+//     }
+//     else if (c > a && c > b)
+//     {
+//         printf("c je najveci");
+//     }
+//     else if (a > b && a < c)
+//     {
+//         printf("a je srednji");
+//     }
+//     else if (b > a && b < c)
+//     {
+//         printf("b je srednji");
+//     }
+//     else if (c > a && c < b)
+//     {
+//         printf("c je srednji");
+//     }
+// }
+//==================================================================================
