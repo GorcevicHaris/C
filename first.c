@@ -564,37 +564,52 @@
 //     }
 // }
 //==================================================================================
-#include <stdio.h>
+// int main()
+// {
+//     int broj1, broj2, broj3, max, sred, min;
+
+//     printf("Unesite tri cela broja: ");
+//     scanf("%d %d %d", &broj1, &broj2, &broj3);
+
+//     if (broj1 != broj2 && broj1 != broj3 && broj2 != broj3)
+//     {
+//         max = broj1;
+//         if (broj2 > max)
+//             max = broj2;
+//         if (broj3 > max)
+//             max = broj3;
+
+//         min = broj1;
+//         if (broj2 < min)
+//             min = broj2;
+//         if (broj3 < min)
+//             min = broj3;
+
+//         sred = (broj1 + broj2 + broj3) - (min + max);
+
+//         printf("Max = %d\nSrednji = %d\nMin = %d\n", max, sred, min);
+//     }
+//     else
+//     {
+//         printf("Neki brojevi su isti.\n");
+//     }
+
+//     return 0;
+// }
 
 int main()
 {
-    int broj1, broj2, broj3, max, sred, min;
+    int a, b;
 
-    printf("Unesite tri cela broja: ");
-    scanf("%d %d %d", &broj1, &broj2, &broj3);
+    printf("unesi a i b\n");
+    scanf("%d %d", &a, &b);
 
-    if (broj1 != broj2 && broj1 != broj3 && broj2 != broj3)
+    if (a > b)
     {
-        max = broj1;
-        if (broj2 > max)
-            max = broj2;
-        if (broj3 > max)
-            max = broj3;
-
-        min = broj1;
-        if (broj2 < min)
-            min = broj2;
-        if (broj3 < min)
-            min = broj3;
-
-        sred = (broj1 + broj2 + broj3) - (min + max);
-
-        printf("Max = %d\nSrednji = %d\nMin = %d\n", max, sred, min);
+        printf("%d\n", a - b);
     }
     else
     {
-        printf("Neki brojevi su isti.\n");
+        printf("%d\n", b - a);
     }
-
-    return 0;
 }
