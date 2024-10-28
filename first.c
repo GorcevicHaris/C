@@ -597,19 +597,38 @@
 //     return 0;
 // }
 
-int main()
-{
-    int a, b;
+// int main()
+// {
+//     int a, b;
+//======================================================================================================
+//     printf("unesi a i b\n");
+//     scanf("%d %d", &a, &b);
 
-    printf("unesi a i b\n");
-    scanf("%d %d", &a, &b);
+//     if (a > b)
+//     {
+//         printf("%d\n", a - b);
+//     }
+//     else
+//     {
+//         printf("%d\n", b - a);
+//     }
+// }
+//=====================================================================================================
+// int main()
+// {
+//     int n;
+//     double sum = 0;
+//     printf("Unesite brojeve\n");
+//     scanf("%d", &n);
+//     double arr[n];
 
-    if (a > b)
-    {
-        printf("%d\n", a - b);
-    }
-    else
-    {
-        printf("%d\n", b - a);
-    }
-}
+//     for (int i = 0; i < n; i++)
+//     {
+//         printf("unesite element: %d\n", i + 1);
+//         scanf("%lf", &arr[i]);
+//         sum += arr[i];
+//     }
+//     printf("%.2lf\n", sum / n);
+
+//     return 0;
+// }
