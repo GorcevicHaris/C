@@ -655,35 +655,79 @@
 //     }
 // }
 //=====================================================================================================
-int main()
-{
-    int pocetak, kraj, i, suma = 0, n;
-    double sredina;
-    int brojDeljivih = 0;
-    printf("unesite pocetak i kraj\n");
-    scanf("%d %d", &pocetak, &kraj);
-    printf("Izaberite broj koji želite da je deljiv sa ovim brojevima od %d do %d.\n", pocetak, kraj);
-    scanf("%d", &n);
+// aritmeticka sredina ispisati  od pocetka do kraja i posle napisati broj sa koji ce biti deljiv sa
+// jednim od tih brojeva npr jedan od tih brojeva da je deljiv sa 5 == 0 i sad svi brojevi koji su deljivi
+// sa 5 se ubrajaju u sumu i dele se sa brojevima koji su deljivi sa 5 npr od 1 do 10 to je 5 i 10 to je 15 / 2
+// int main()
+// {
+//     int pocetak, kraj, i, suma = 0, n;
+//     double sredina;
+//     int brojDeljivih = 0;
+//     printf("unesite pocetak i kraj\n");
+//     scanf("%d %d", &pocetak, &kraj);
+//     printf("Izaberite broj koji želite da je deljiv sa ovim brojevima od %d do %d.\n", pocetak, kraj);
+//     scanf("%d", &n);
 
-    for (i = pocetak; i <= kraj; i++)
-    {
-        if (i % n == 0)
-        {
-            suma += i;
-            brojDeljivih++;
-        }
-    }
+//     for (i = pocetak; i <= kraj; i++)
+//     {
+//         if (i % n == 0)
+//         {
+//             suma += i;
+//             brojDeljivih++;
+//         }
+//     }
 
-    if (n >= pocetak && n <= kraj)
-    {
-        sredina = (double)suma / brojDeljivih;
-        printf("%.2lf - suma", sredina);
-    }
-    else
-    {
-        printf("Broj je veci od kraja ili manji od pocetka, morate izabrati neki od %d do %d\n", pocetak, kraj);
-    }
-    return 0;
-}
+//     if (n >= pocetak && n <= kraj)
+//     {
+//         sredina = (double)suma / brojDeljivih;
+//         printf("%.2lf - suma", sredina);
+//     }
+//     else
+//     {
+//         printf("Broj je veci od kraja ili manji od pocetka, morate izabrati neki od %d do %d\n", pocetak, kraj);
+//     }
+//     return 0;
+// }
 
-// n treba da se podeli sa sumom
+// // n treba da se podeli sa sumom
+//=====================================================================================================
+
+// int main()
+// {
+//     int pocetak, kraj, djelilac, i, brojeva;
+//     float zbir, sredina;
+
+//     // Unos pocetne i krajnje vrijednosti
+//     printf("Unesite pocetnu i krajnju vrijednost\n");
+//     scanf("%d %d", &pocetak, &kraj);
+
+//     // Unos broja sa kojim treba da je djeljiv
+//     printf("Unesite broj sa kojim treba da je djeljiv\n");
+//     scanf("%d", &djelilac);
+
+//     brojeva = 0;
+//     zbir = 0;
+
+//     // Prolaz kroz interval od pocetka do kraja
+//     for (i = pocetak; i <= kraj; i++)
+//     {
+//         if (i % djelilac == 0)
+//         {              // Provjera da li je broj djeljiv
+//             zbir += i; // Dodavanje djeljivog broja u zbir
+//             brojeva += 1;
+//         }
+//     }
+
+//     // Provjera da li postoji barem jedan broj koji zadovoljava uslov
+//     if (brojeva == 0)
+//     {
+//         printf("Nemoguce!\n");
+//     }
+//     else
+//     {
+//         sredina = zbir / brojeva; // Racunanje aritmeticke sredine
+//         printf("Aritmeticka sredina je %f.\n", sredina);
+//     }
+
+//     return 0;
+// }
