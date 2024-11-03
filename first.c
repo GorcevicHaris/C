@@ -659,6 +659,7 @@ int main()
 {
     int pocetak, kraj, i, suma = 0, n;
     double sredina;
+    int brojDeljivih = 0;
     printf("unesite pocetak i kraj\n");
     scanf("%d %d", &pocetak, &kraj);
     printf("Izaberite broj koji želite da je deljiv sa ovim brojevima od %d do %d.\n", pocetak, kraj);
@@ -666,12 +667,16 @@ int main()
 
     for (i = pocetak; i <= kraj; i++)
     {
-        suma += i;
+        if (i % n == 0)
+        {
+            suma += i;
+            brojDeljivih++;
+        }
     }
 
     if (n >= pocetak && n <= kraj)
     {
-        sredina = (double)suma / i;
+        sredina = (double)suma / brojDeljivih;
         printf("%.2lf - suma", sredina);
     }
     else
