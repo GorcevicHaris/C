@@ -632,3 +632,53 @@
 
 //     return 0;
 // }
+//=====================================================================================================
+// DO WHILE
+// int main()
+// {
+//     int i = 0;
+//     do
+//     {
+//         printf("%d\n", i);
+//         i++;
+//     } while (i <= 5);
+// }
+//=====================================================================================================
+// WHILE
+// int main()
+// {
+//     int i = 0;
+//     while (i <= 5)
+//     {
+//         printf("%d\n", i);
+//         i++;
+//     }
+// }
+//=====================================================================================================
+int main()
+{
+    int pocetak, kraj, i, suma = 0, n;
+    double sredina;
+    printf("unesite pocetak i kraj\n");
+    scanf("%d %d", &pocetak, &kraj);
+    printf("Izaberite broj koji želite da je deljiv sa ovim brojevima od %d do %d.\n", pocetak, kraj);
+    scanf("%d", &n);
+
+    for (i = pocetak; i <= kraj; i++)
+    {
+        suma += i;
+    }
+
+    if (n >= pocetak && n <= kraj)
+    {
+        sredina = (double)suma / i;
+        printf("%.2lf - suma", sredina);
+    }
+    else
+    {
+        printf("Broj je veci od kraja ili manji od pocetka, morate izabrati neki od %d do %d\n", pocetak, kraj);
+    }
+    return 0;
+}
+
+// n treba da se podeli sa sumom
