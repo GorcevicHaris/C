@@ -564,38 +564,38 @@
 //     }
 // }
 //==================================================================================
-// int main()
-// {
-//     int broj1, broj2, broj3, max, sred, min;
+int main()
+{
+    int broj1, broj2, broj3, max, sred, min;
 
-//     printf("Unesite tri cela broja: ");
-//     scanf("%d %d %d", &broj1, &broj2, &broj3);
+    printf("Unesite tri cela broja: ");
+    scanf("%d %d %d", &broj1, &broj2, &broj3);
 
-//     if (broj1 != broj2 && broj1 != broj3 && broj2 != broj3)
-//     {
-//         max = broj1;
-//         if (broj2 > max)
-//             max = broj2;
-//         if (broj3 > max)
-//             max = broj3;
+    if (broj1 != broj2 && broj1 != broj3 && broj2 != broj3)
+    {
+        max = broj1;
+        if (broj2 > max)
+            max = broj2;
+        if (broj3 > max)
+            max = broj3;
 
-//         min = broj1;
-//         if (broj2 < min)
-//             min = broj2;
-//         if (broj3 < min)
-//             min = broj3;
+        min = broj1;
+        if (broj2 < min)
+            min = broj2;
+        if (broj3 < min)
+            min = broj3;
 
-//         sred = (broj1 + broj2 + broj3) - (min + max);
+        sred = (broj1 + broj2 + broj3) - (min + max);
 
-//         printf("Max = %d\nSrednji = %d\nMin = %d\n", max, sred, min);
-//     }
-//     else
-//     {
-//         printf("Neki brojevi su isti.\n");
-//     }
+        printf("Max = %d\nSrednji = %d\nMin = %d\n", max, sred, min);
+    }
+    else
+    {
+        printf("Neki brojevi su isti.\n");
+    }
 
-//     return 0;
-// }
+    return 0;
+}
 
 // int main()
 // {
@@ -660,15 +660,16 @@
 // sa 5 se ubrajaju u sumu i dele se sa brojevima koji su deljivi sa 5 npr od 1 do 10 to je 5 i 10 to je 15 / 2
 // int main()
 // {
-//     int pocetak, kraj, i, suma = 0, n;
-//     double sredina;
+//     int pocetak, kraj, n;
+//     int suma = 0;
 //     int brojDeljivih = 0;
+//     double sredina;
 //     printf("unesite pocetak i kraj\n");
 //     scanf("%d %d", &pocetak, &kraj);
 //     printf("Izaberite broj koji želite da je deljiv sa ovim brojevima od %d do %d.\n", pocetak, kraj);
 //     scanf("%d", &n);
 
-//     for (i = pocetak; i <= kraj; i++)
+//     for (int i = pocetak; i <= kraj; i++)
 //     {
 //         if (i % n == 0)
 //         {
@@ -730,4 +731,52 @@
 //     }
 
 //     return 0;
+// }
+//========================================================================================
+// int main()
+// {
+//     int a;
+//     scanf("%d", &a);
+//     switch (a)
+//     {
+//     case 1:
+//         printf("1 je");
+//         break;
+//     case 2:
+//         printf("2 je");
+//         break;
+//     default:
+//         printf("broj nije pronadjen");
+//         break;
+//     }
+//     return 0;
+// }
+//======================================================================================
+
+// int main()
+// {
+//     int broj, zbir = 0;
+
+//     printf("Unesite broj: ");
+//     scanf("%d", &broj);
+
+//     while (broj)
+//     {
+//         zbir +=broj % 10;
+//         broj /= 10;
+//     }
+
+//     printf("Zbir cifara unetog broja je: %d\n", zbir);
+
+//     return 0;
+// }
+//=========================================================================================================
+// int main()
+// {
+//     int a, suma = 1;
+//     scanf("%d", &a);
+//     for (int i = 1; i < a; i++)
+//     {
+//         printf("%d\n", suma *= i);
+//     }
 // }
