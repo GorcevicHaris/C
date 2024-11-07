@@ -564,38 +564,38 @@
 //     }
 // }
 //==================================================================================
-int main()
-{
-    int broj1, broj2, broj3, max, sred, min;
+// int main()
+// {
+//     int broj1, broj2, broj3, max, sred, min;
 
-    printf("Unesite tri cela broja: ");
-    scanf("%d %d %d", &broj1, &broj2, &broj3);
+//     printf("Unesite tri cela broja: ");
+//     scanf("%d %d %d", &broj1, &broj2, &broj3);
 
-    if (broj1 != broj2 && broj1 != broj3 && broj2 != broj3)
-    {
-        max = broj1;
-        if (broj2 > max)
-            max = broj2;
-        if (broj3 > max)
-            max = broj3;
+//     if (broj1 != broj2 && broj1 != broj3 && broj2 != broj3)
+//     {
+//         max = broj1;
+//         if (broj2 > max)
+//             max = broj2;
+//         if (broj3 > max)
+//             max = broj3;
 
-        min = broj1;
-        if (broj2 < min)
-            min = broj2;
-        if (broj3 < min)
-            min = broj3;
+//         min = broj1;
+//         if (broj2 < min)
+//             min = broj2;
+//         if (broj3 < min)
+//             min = broj3;
 
-        sred = (broj1 + broj2 + broj3) - (min + max);
+//         sred = (broj1 + broj2 + broj3) - (min + max);
 
-        printf("Max = %d\nSrednji = %d\nMin = %d\n", max, sred, min);
-    }
-    else
-    {
-        printf("Neki brojevi su isti.\n");
-    }
+//         printf("Max = %d\nSrednji = %d\nMin = %d\n", max, sred, min);
+//     }
+//     else
+//     {
+//         printf("Neki brojevi su isti.\n");
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 // int main()
 // {
@@ -752,7 +752,6 @@ int main()
 //     return 0;
 // }
 //======================================================================================
-
 // int main()
 // {
 //     int broj, zbir = 0;
@@ -762,7 +761,7 @@ int main()
 
 //     while (broj)
 //     {
-//         zbir +=broj % 10;
+//         zbir += broj % 10;
 //         broj /= 10;
 //     }
 
@@ -780,3 +779,31 @@ int main()
 //         printf("%d\n", suma *= i);
 //     }
 // }
+//=========================================================================================================
+
+// int main()
+// {
+//     int a, b, rezultat = 1;
+
+//     printf("Unesite bazu (a): ");
+//     scanf("%d", &a);
+//     printf("Unesite eksponent (b): ");
+//     scanf("%d", &b);
+
+//     for (int i = 0; i < b; i++)
+//     {
+//         rezultat *= a;
+//     }
+//     printf("%d - rezultat", rezultat);
+// }
+
+//=========================================================================================================
+// int main()
+// {
+//     int a, b, rezultat;
+//     printf("unesi a i b\n");
+//     scanf("%d %d", &a, &b);
+//     rezultat = pow(a, b);
+//     printf("%d - rez", rezultat);
+// }
+//=========================================================================================================
