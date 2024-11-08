@@ -2,6 +2,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
+#include <stdbool.h>
+
 // Zadatak 1
 //  int main()
 //  {
@@ -806,4 +808,62 @@
 //     rezultat = pow(a, b);
 //     printf("%d - rez", rezultat);
 // }
-//=========================================================================================================
+//========================================================================================================
+// int main()
+// {
+//     int a, b = 1;
+
+//     printf("unesi broj ");
+//     scanf("%d", &a);
+
+//     for (int i = 1; i < a; i++)
+//     {
+//         b *= i;
+//     }
+//     printf("%d\n -b ", b);
+// }
+//========================================================================================================
+// // Proveri da li je prost broj
+// int main()
+// {
+//     int a;
+//     bool jelProst = true;
+
+//     printf("unesi broj");
+//     scanf("%d", &a);
+
+//     for (int i = 2; i < a; i++)
+//     {
+//         if (a % i == 0)
+//         {
+//             jelProst = false;
+//         }
+//     }
+//     printf("%d §-", jelProst);
+// }
+//========================================================================================================
+// // Pronaci NZD Najveci zajednici delilac npr 8 i 20 je 4
+// int main()
+// {
+//     int a, b, nzd;
+//     ;
+
+//     printf("Unesite a i b\n");
+//     scanf("%d %d", &a, &b);
+
+//     for (int i = a; i > 0; i--)
+//     {
+//         if (a % i == 0 && b % i == 0)
+//         {
+//             nzd = i;
+//             break;
+//         }
+//     }
+//     printf("%d", nzd);
+// }
+//========================================================================================================
+// NZD
+int main()
+{
+    int a, b;
+}
