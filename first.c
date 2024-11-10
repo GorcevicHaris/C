@@ -859,11 +859,39 @@
 //             break;
 //         }
 //     }
-//     printf("%d", nzd);
+//     printf("NZD - %d ", nzd);
 // }
 //========================================================================================================
-// NZD
-int main()
-{
-    int a, b;
-}
+// int main()
+// {
+//     int a, b;
+
+//     printf("Unesite a i b\n");
+//     scanf("%d %d", &a, &b);
+
+//     // za Euclidov algoritam
+//     while (b != 0)
+//     {
+//         // a = 5
+//         // b = 10
+//         int temp = b;
+//         b = a % b;
+//         a = temp;
+//     }
+//     printf("NZD: %d\n", a); // Na kraju a je NZD, u ovom slučaju 1
+//     return 0;
+// }
+//========================================================================================================
+// // Naci faktorijal
+// int main()
+// {
+//     int a, suma = 1;
+//     printf("uensi broj");
+//     scanf("%d", &a);
+//     for (int i = 1; i <= a; i++)
+//     {
+//         suma *= i;
+//     }
+//     printf("ovo je suma %d", suma);
+// }
+//========================================================================================================
