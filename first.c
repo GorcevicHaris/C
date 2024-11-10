@@ -842,7 +842,7 @@
 //     printf("%d §-", jelProst);
 // }
 //========================================================================================================
-// // Pronaci NZD Najveci zajednici delilac npr 8 i 20 je 4
+// Pronaci NZD Najveci zajednici delilac npr 8 i 20 je 4
 // int main()
 // {
 //     int a, b, nzd;
@@ -886,7 +886,7 @@
 // int main()
 // {
 //     int a, suma = 1;
-//     printf("uensi broj");
+//     printf("unesi broj");
 //     scanf("%d", &a);
 //     for (int i = 1; i <= a; i++)
 //     {
@@ -895,3 +895,38 @@
 //     printf("ovo je suma %d", suma);
 // }
 //========================================================================================================
+// PRoveriti da li je prost
+// int main()
+// {
+//     int a;
+//     char jelProst[20] = "prost je";
+//     printf("unesi broj");
+//     scanf("%d", &a);
+
+//     for (int i = 2; i < a; i++)
+//     {
+//         if (a % i == 0)
+//         {
+//             strcpy(jelProst, "nije prost");
+//         }
+//     }
+
+//     printf("%s\n", jelProst);
+//     return 0;
+// }
+//========================================================================================================
+// // pronaci NZD uz pomoc Euklidovog algoritma
+// int main()
+// {
+//     int a, b;
+//     printf("unesite a i b");
+//     scanf("%d %d", &a, &b);
+
+//     while (b != 0)
+//     {
+//         int temp = b;
+//         b = a % b;
+//         a = temp;
+//     }
+//     printf("nzd je - %d", a);
+// }
