@@ -950,48 +950,154 @@
 //========================================================================================================
 // int main()
 // {
-//     double broj1, broj2, rezultat;
-//     char operacija;
+//     double num1, num2, result;
+//     char operation;
 
-//     // Unos brojeva i operacije
 //     printf("Unesite prvi broj: ");
-//     scanf("%lf", &broj1);
+//     scanf("%lf", &num1);
 
 //     printf("Unesite drugi broj: ");
-//     scanf("%lf", &broj2);
+//     scanf("%lf", &num2);
 
 //     printf("Izaberite operaciju (+, -, *, /): ");
-//     scanf(" %c", &operacija);
+//     scanf(" %c", &operation);
 
-//     // Izbor operacije
-//     switch (operacija)
+//     switch (operation)
 //     {
 //     case '+':
-//         rezultat = broj1 + broj2;
-//         printf("Rezultat: %.2lf\n", rezultat);
+//         result = num1 + num2;
+//         printf("rezultat - %.2lf\n ", result);
 //         break;
 //     case '-':
-//         rezultat = broj1 - broj2;
-//         printf("Rezultat: %.2lf\n", rezultat);
+//         result = num1 - num2;
+//         printf("rezultat - %.2lf\n ", result);
 //         break;
 //     case '*':
-//         rezultat = broj1 * broj2;
-//         printf("Rezultat: %.2lf\n", rezultat);
+//         result = num1 * num2;
+//         printf("rezultat - %.2lf\n ", result);
 //         break;
 //     case '/':
-//         if (broj2 != 0)
+//         if (num2 != 0)
 //         {
-//             rezultat = broj1 / broj2;
-//             printf("Rezultat: %.2lf\n", rezultat);
+//             result = num1 / num2;
+//             printf("rezultat - %.2lf\n ", result);
 //         }
 //         else
 //         {
-//             printf("Greška: Deljenje nulom nije dozvoljeno!\n");
+//             printf("Nije dozvoljeno deliti sa 0");
 //         }
 //         break;
 //     default:
-//         printf("Greška: Nepoznata operacija!\n");
+//         printf("birana operacija ne postoji");
+//     }
+// }
+//========================================================================================================
+// int sumaBrojeva(int broj)
+// {
+//     if (broj == 0)
+//     {
+//         return 0;
+//     }
+//     // 531
+//     //  1 + 53
+//     //  3 + 5
+//     // 5 + 0
+//     // 3+5
+//     // 1+8
+//     return broj % 10 + sumaBrojeva(broj / 10);
+// }
+
+// int main()
+// {
+//     int broj, zbir;
+//     printf("izaberi broj\n");
+//     scanf("%d", &broj);
+
+//     zbir = sumaBrojeva(broj);
+//     printf(" zbir - %d", zbir);
+// }
+//========================================================================================================
+// #include <stdio.h>
+
+// // Funkcija za izračunavanje GGD (najveći zajednički delilac)
+// int GGD(int a, int b)
+// {
+//     while (b != 0)
+//     {
+//         int temp = b;
+//         b = a % b;
+//         a = temp;
+//     }
+//     return a;
+// }
+
+// // Funkcija za izračunavanje NZS
+// int NZS(int a, int b)
+// {
+//     return (a * b) / GGD(a, b);
+// }
+
+// int main()
+// {
+//     int a, b;
+
+//     // Unos brojeva
+//     printf("Unesite dva broja: ");
+//     scanf("%d %d", &a, &b);
+
+//     // Izračunavanje i ispis NZS-a
+//     printf("NZS(%d, %d) = %d\n", a, b, NZS(a, b));
+
+//     return 0;
+// }
+//========================================================================================================
+// // nzs
+// int main()
+// {
+//     int broj1, broj2;
+//     int nzd = 0;
+//     printf("unesi dva broja");
+//     scanf("%d %d", &broj1, &broj2);
+
+//     for (int i = 1; i <= broj1 * broj2; i++)
+//     {
+//         // 5 6 int = 30
+//         if (i % broj1 == 0 && i % broj2 == 0)
+//         {
+//             nzd = i;
+//             break;
+//         }
+//     }
+//     printf("Najmanji zajednički višekratnik (NZS) brojeva %d i %d je %d.\n", broj1, broj2, nzd);
+
+//     return 0;
+// }
+//========================================================================================================
+
+// int main()
+// {
+//     int broj;
+//     int zbirDelilaca = 0;
+
+//     printf("Unesite broj: ");
+//     scanf("%d", &broj);
+
+//     for (int i = 1; i < broj; i++)
+//     {
+//         if (broj % i == 0)
+//         {
+//             zbirDelilaca += i;
+//         }
+//     }
+//     if (zbirDelilaca == broj)
+//     {
+//         printf("%d je savršen broj.\n", broj);
+//     }
+//     else
+//     {
+//         printf("%d nije savršen broj.\n", broj);
 //     }
 
 //     return 0;
 // }
+//========================================================================================================
