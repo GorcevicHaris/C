@@ -930,3 +930,68 @@
 //     }
 //     printf("nzd je - %d", a);
 // }
+//========================================================================================================
+// 4. Sumiranje n brojeva​
+// Napiši program koji unosi n brojeva jedan po jedan (bez niza), računa njihov zbir i prosečnu vrednost koristeći petlju.
+//========================================================================================================
+// int main()
+// {
+//     int n, suma = 0, prosek = 1, broj;
+//     printf("unesi koliko brojeva\n");
+//     scanf("%d", &n);
+//     for (int i = 0; i < n; i++)
+//     {
+//         printf("unesite vas %d broj - \n", i + 1);
+//         scanf("%d", &broj);
+//         suma += broj;
+//     }
+//     printf("prosek je je - %.2lf", (double)suma / broj);
+// }
+//========================================================================================================
+// int main()
+// {
+//     double broj1, broj2, rezultat;
+//     char operacija;
+
+//     // Unos brojeva i operacije
+//     printf("Unesite prvi broj: ");
+//     scanf("%lf", &broj1);
+
+//     printf("Unesite drugi broj: ");
+//     scanf("%lf", &broj2);
+
+//     printf("Izaberite operaciju (+, -, *, /): ");
+//     scanf(" %c", &operacija);
+
+//     // Izbor operacije
+//     switch (operacija)
+//     {
+//     case '+':
+//         rezultat = broj1 + broj2;
+//         printf("Rezultat: %.2lf\n", rezultat);
+//         break;
+//     case '-':
+//         rezultat = broj1 - broj2;
+//         printf("Rezultat: %.2lf\n", rezultat);
+//         break;
+//     case '*':
+//         rezultat = broj1 * broj2;
+//         printf("Rezultat: %.2lf\n", rezultat);
+//         break;
+//     case '/':
+//         if (broj2 != 0)
+//         {
+//             rezultat = broj1 / broj2;
+//             printf("Rezultat: %.2lf\n", rezultat);
+//         }
+//         else
+//         {
+//             printf("Greška: Deljenje nulom nije dozvoljeno!\n");
+//         }
+//         break;
+//     default:
+//         printf("Greška: Nepoznata operacija!\n");
+//     }
+
+//     return 0;
+// }
