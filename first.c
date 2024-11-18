@@ -1101,3 +1101,36 @@
 //     return 0;
 // }
 //========================================================================================================
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    int a = 0, b = 1, temp;
+
+    printf("Unesite broj n: ");
+    scanf("%d", &n);
+
+    printf("Prvih %d članova Fibonacci niza su: \n", n);
+
+    if (n >= 1)
+    {
+        printf("%d ", a);
+    }
+
+    if (n >= 2)
+    {
+        printf("%d ", b);
+    }
+
+    for (int i = 3; i <= n; i++)
+    {
+        temp = a + b;        // 0 1 1 1 1
+        printf("%d ", temp); // 1 2
+        a = b;               // 1 //1
+        b = temp;            // 1  2
+    }
+
+    printf("\n");
+    return 0;
+}
