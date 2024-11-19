@@ -1143,3 +1143,152 @@
 //     }
 // }
 //===========================================================================
+// Priprema za test
+// 1. Faktorijel broja
+// int main()
+// {
+//     int a, suma = 1;
+//     ;
+
+//     printf("unesi broj\n");
+//     scanf("%d", &a);
+
+//     for (int i = 1; i <= a; i++)
+//     {
+//         suma *= i;
+//     }
+//     printf("Ovo je suma - %d", suma);
+// }
+// //===========================================================================
+// // 2. Prost broj
+// int main()
+// {
+//     int a;
+//     char daLiJeProst[20] = "Prost je";
+//     printf("unesi broj\n");
+//     scanf("%d", &a);
+
+//     if (a < 2)
+//     {
+//         printf("nije prost");
+//     }
+//     for (int i = 2; i < a; i++)
+//     {
+//         if (a % i == 0)
+//         {
+//             printf("%d\n", i);
+//             strcpy(daLiJeProst, "nijeprost");
+//         }
+//     }
+
+//     printf("%s ", daLiJeProst);
+// }
+//============================================================================================
+// 3. Najveci zajednicki delilac
+// int main()
+// {
+//     int a, b, nzd;
+//     printf("unesi a \n");
+//     scanf("%d", &a);
+//     printf("unesi b \n");
+//     scanf("%d", &b);
+
+//     for (int i = a; i >= 1; i--)
+//     {
+//         if (a % i == 0 && b % i == 0)
+//         {
+//             nzd = i;
+//             break;
+//         }
+//     }
+//     printf("Ovo je nzd - %d", nzd);
+// }
+//============================================================================================
+// 4. Sumiranje n brojeva
+// Napiši program koji unosi n brojeva jedan po jedan
+// (bez niza), računa njihov zbir i prosečnu vrednost koristeći petlju.
+// int main()
+// {
+//     int n, i;
+//     double prosecnaVrednost = 0.0, suma = 0, a;
+
+//     printf("unesi koliko zelis brojeva\n");
+//     scanf("%d", &n);
+//     // npr 7 n brojeva
+//     // i < 7 printf ce se izvsiti 7 puta i scanf 7 puta
+//     // suma +=a
+//     for (i = 0; i < n; i++)
+//     {
+//         printf("unesite vas %d broj\n", i + 1);
+//         scanf("%lf", &a);
+//         suma += a;
+//     }
+//     prosecnaVrednost = suma / i;
+//     printf("Zbir je %.2lf prosecna vrednost je - %.2lf", suma, prosecnaVrednost);
+// }
+//============================================================================================
+// 5. Broj obrnuto
+// #include <stdio.h>
+
+// int main()
+// {
+//     int a, b = 0;
+
+//     printf("Unesi broj: ");
+//     scanf("%d", &a);
+
+//     // Petlja koja uzima poslednju cifru broja
+//     while (a != 0)
+//     {
+//         int temp = a % 10; // 12345//5//1234//4//123/3//12//2//1//1
+
+//         b = b * 10 + temp; // 0*10+5//5//5 * 10 + 4 //54//54 * 10 + 3// 543//543*10 + 2//5430 + 2 // 5432// 5432 * 10 + 1//54320 +1//54321
+
+//         a = a / 10; // 12345 / 10 //1234//123//12//1//0
+//     }
+
+//     // Ispis obrnutog broja
+//     printf("Obrnuto: %d\n", b);
+
+//     return 0;
+// }
+//==========================================================================================================
+// // 5. Broj obrnuto
+// int main()
+// {
+//     int a, b = 0;
+
+//     printf("unesi broj");
+//     scanf("%d", &a);
+
+//     while (a != 0)
+//     {
+//         int temp = a % 10;
+//         b = b * 10 + temp;
+//         a = a / 10;
+//     }
+//     printf("Obrnuti broj je %d", b);
+//     return 0;
+// }
+//==========================================================================================================
+// // Napredni
+// //. 1Suma cifara broja​
+// // Napiši program koja računa zbir svih cifara broja.
+
+// int main()
+// {
+//     long long a, b = 0;
+
+//     printf("unesi broj\n");
+//     scanf("%lld", &a);
+
+//     while (a != 0)
+//     {
+//         // a = 23// 3
+//         int temp = a % 10;
+//         b += temp;
+//         a = a / 10;
+//     }
+//     printf("zbir je  %lld\n", b);
+// }
+//==========================================================================================================
