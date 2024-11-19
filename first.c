@@ -839,14 +839,13 @@
 //             jelProst = false;
 //         }
 //     }
-//     printf("%d §-", jelProst);
+//     printf("%d ", jelProst);
 // }
 //========================================================================================================
 // Pronaci NZD Najveci zajednici delilac npr 8 i 20 je 4
 // int main()
 // {
 //     int a, b, nzd;
-//     ;
 
 //     printf("Unesite a i b\n");
 //     scanf("%d %d", &a, &b);
@@ -861,6 +860,7 @@
 //     }
 //     printf("NZD - %d ", nzd);
 // }
+
 //========================================================================================================
 // int main()
 // {
@@ -882,7 +882,7 @@
 //     return 0;
 // }
 //========================================================================================================
-// // Naci faktorijal
+// // // Naci faktorijal
 // int main()
 // {
 //     int a, suma = 1;
@@ -1073,7 +1073,7 @@
 //     return 0;
 // }
 //========================================================================================================
-
+// pronadji savrsen broj
 // int main()
 // {
 //     int broj;
@@ -1101,36 +1101,45 @@
 //     return 0;
 // }
 //========================================================================================================
-#include <stdio.h>
+// // fibonacijev niz
+// int main()
+// {
+//     int n;
+//     int a = 0, b = 1, temp;
 
-int main()
-{
-    int n;
-    int a = 0, b = 1, temp;
+//     printf("Unesite broj n: ");
+//     scanf("%d", &n);
 
-    printf("Unesite broj n: ");
-    scanf("%d", &n);
+//     printf("Prvih %d članova Fibonacci niza su: \n", n);
 
-    printf("Prvih %d članova Fibonacci niza su: \n", n);
+//     if (n >= 1)
+//     {
+//         printf("%d ", a);
+//     }
 
-    if (n >= 1)
-    {
-        printf("%d ", a);
-    }
+//     if (n >= 2)
+//     {
+//         printf("%d ", b);
+//     }
 
-    if (n >= 2)
-    {
-        printf("%d ", b);
-    }
+//     for (int i = 3; i <= n; i++)
+//     {
+//         temp = a + b; // 0 s2
+//         a = b;        // 1 //1
+//         b = temp;     // 1  2
+//     }
 
-    for (int i = 3; i <= n; i++)
-    {
-        temp = a + b;        // 0 1 1 1 1
-        printf("%d ", temp); // 1 2
-        a = b;               // 1 //1
-        b = temp;            // 1  2
-    }
-
-    printf("\n");
-    return 0;
-}
+//     printf("\n");
+//     return 0;
+// }
+//===========================================================================
+// int main()
+// {
+//     int a, u = 0;
+//     while (a != 0)
+//     {
+//         u = a * 10 + a % 10;
+//         a / 10;
+//     }
+// }
+//===========================================================================
