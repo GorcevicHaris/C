@@ -919,7 +919,7 @@
 // int main()
 // {
 //     int a, b;
-//     printf("unesite a i b");
+//     printf("unesite a i b\n");
 //     scanf("%d %d", &a, &b);
 
 //     while (b != 0)
@@ -1056,7 +1056,7 @@
 // {
 //     int broj1, broj2;
 //     int nzd = 0;
-//     printf("unesi dva broja");
+//     printf("unesi dva broja\n");
 //     scanf("%d %d", &broj1, &broj2);
 
 //     for (int i = 1; i <= broj1 * broj2; i++)
@@ -1068,7 +1068,7 @@
 //             break;
 //         }
 //     }
-//     printf("Najmanji zajednički višekratnik (NZS) brojeva %d i %d je %d.\n", broj1, broj2, nzd);
+//     printf("Najmanji zajednički  (NZS) brojeva %d i %d je %d.\n", broj1, broj2, nzd);
 
 //     return 0;
 // }
@@ -1102,6 +1102,7 @@
 // }
 //========================================================================================================
 // // fibonacijev niz
+
 // int main()
 // {
 //     int n;
@@ -1124,14 +1125,16 @@
 
 //     for (int i = 3; i <= n; i++)
 //     {
-//         temp = a + b; // 0 s2
-//         a = b;        // 1 //1
-//         b = temp;     // 1  2
+//         temp = a + b;
+//         printf("%d ", temp);
+//         a = b;
+//         b = temp;
 //     }
 
 //     printf("\n");
 //     return 0;
 // }
+
 //===========================================================================
 // int main()
 // {
@@ -1157,7 +1160,7 @@
 //     {
 //         suma *= i;
 //     }
-//     printf("Ovo je suma - %d", suma);
+//     printf("Ovo je suma ili faktorijal  - %d", suma);
 // }
 // //===========================================================================
 // // 2. Prost broj
@@ -1176,7 +1179,6 @@
 //     {
 //         if (a % i == 0)
 //         {
-//             printf("%d\n", i);
 //             strcpy(daLiJeProst, "nijeprost");
 //         }
 //     }
@@ -1292,3 +1294,106 @@
 //     printf("zbir je  %lld\n", b);
 // }
 //==========================================================================================================
+// 2. Niz Fibonacci brojeva​
+
+// int main()
+// {
+// }
+//==================================
+// #include <stdio.h>
+
+// int main()
+// {
+//     int n, i;
+//     int prost = 1; // Pretpostavljamo da je broj prost
+
+//     printf("Unesite broj: ");
+//     scanf("%d", &n);
+
+//     if (n <= 1)
+//     {
+//         prost = 0; // Broj manji ili jednak 1 nije prost
+//     }
+//     else
+//     {
+//         for (i = 2; i * i <= n; i++)
+//         {
+//             if (n % i == 0)
+//             {
+//                 prost = 0; // Broj je deljiv, nije prost
+//                 break;
+//             }
+//         }
+//     }
+
+//     if (prost)
+//     {
+//         printf("%d je prost broj.\n", n);
+//     }
+//     else
+//     {
+//         printf("%d nije prost broj.\n", n);
+//     }
+
+//     return 0;
+// }
+//==================================================================
+// int main()
+// {
+//     int n;
+
+//     printf("Unesite broj: ");
+//     scanf("%d", &n);
+
+//     if (n % 2 == 0)
+//     {
+//         printf("%d je paran broj.\n", n);
+//     }
+//     else
+//     {
+//         printf("%d je neparan broj.\n", n);
+//     }
+
+//     return 0;
+// }
+//==================================================================
+
+// int main()
+// {
+//     int a, b, c;
+
+//     printf("Unesite tri broja: \n");
+//     scanf("%d %d %d", &a, &b, &c);
+
+//     if (a >= b && a >= c)
+//     {
+//         printf("Najveci broj je: %d\n", a);
+//     }
+//     else if (b >= a && b >= c)
+//     {
+//         printf("Najveci broj je: %d\n", b);
+//     }
+//     else
+//     {
+//         printf("Najveci broj je: %d\n", c);
+//     }
+
+//     return 0;
+// }
+//=====================================================================
+// int main()
+// {
+//     double a, b, rezultat;
+
+//     printf("Unesite a ");
+//     scanf("%lf", &a);
+//     printf("Unesite b ");
+//     scanf("%lf", &b);
+
+//     rezultat = pow(a, b);
+
+//     printf("%.2lf na stepen %.2lf je: %.2lf\n", a, b, rezultat);
+
+//     return 0;
+// }
+//=============================================================================================
