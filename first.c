@@ -3,7 +3,6 @@
 #include <ctype.h>
 #include <math.h>
 #include <stdbool.h>
-
 // Zadatak 1
 //  int main()
 //  {
@@ -1294,14 +1293,6 @@
 //     printf("zbir je  %lld\n", b);
 // }
 //==========================================================================================================
-// 2. Niz Fibonacci brojeva​
-
-// int main()
-// {
-// }
-//==================================
-// #include <stdio.h>
-
 // int main()
 // {
 //     int n, i;
@@ -1397,3 +1388,224 @@
 //     return 0;
 // }
 //=============================================================================================
+// // 2. Niz Fibonacci brojeva​
+// int main()
+// {
+//     int n, a = 0, b = 1;
+
+//     printf("unosi broj\n");
+//     scanf("%d", &n);
+
+//     if (n >= 1)
+//     {
+//         printf("%d\n", a);
+//     }
+
+//     if (n >= 2)
+//     {
+//         printf("%d\n", b);
+//     }
+
+//     for (int i = 3; i < n; i++)
+//     {
+//         int temp = a + b; // 0+1//1
+//         printf("%d\n", temp);
+//         a = b;
+//         b = temp;
+//     }
+//     return 0;
+// }
+//=============================================================================================
+// 3. Savrsen broj
+
+// int main()
+// {
+//     int n, zbirDelilaca = 0;
+
+//     printf("unesi broj");
+//     scanf("%d", &n);
+
+//     for (int i = 1; i < n; i++)
+//     {
+//         if (n % i == 0)
+//         {
+//             zbirDelilaca += i;
+//         }
+//     }
+//     printf("%s , zbir delilaca je - %d a n je - %d", zbirDelilaca == n ? "savrsen je" : "nije", zbirDelilaca, n);
+// }
+//=============================================================================================
+// 4. NZS
+
+// int main()
+// {
+//     int a, b, nzs = 0;
+
+//     printf("unesi a\n");
+//     scanf("%d", &a);
+//     printf("unesi b\n");
+//     scanf("%d", &b);
+
+//     for (int i = a; i <= a * b; i++)
+//     {
+//         if (i % a == 0 && i % b == 0)
+//         {
+//             nzs = i;
+//             break;
+//         }
+//     }
+//     printf("nzs je %d", nzs);
+// }
+//=============================================================================================
+// 5. Kalkulator
+
+// int main()
+// {
+
+//     double broj1, broj2, rezultat;
+//     char operatori;
+
+//     printf("unesi prvi broj ");
+//     scanf("%lf", &broj1);
+
+//     printf("unesi drugi  broj ");
+//     scanf("%lf", &broj2);
+
+//     printf("unesi neki od operatora (+ - / *)");
+//     scanf(" %c", &operatori);
+
+//     switch (operatori)
+//     {
+//     case '+':
+//         rezultat = broj1 + broj2;
+//         printf("%.2lf", rezultat);
+//         break;
+//     case '-':
+//         rezultat = broj1 - broj2;
+//         printf("%.2lf", rezultat);
+//         break;
+//     case '*':
+//         rezultat = broj1 * broj2;
+//         printf("%.2lf", rezultat);
+//         break;
+//     case '/':
+//         if (broj2 != 0)
+//         {
+//             rezultat = broj1 / broj2;
+//             printf("%.2lf", rezultat);
+//         }
+//         else
+//         {
+//             printf("ne moze se deliti sa 0");
+//         }
+//         break;
+//     default:
+//         printf("moze se racunati samo sa datim operatorima");
+//     }
+//     return 0;
+// }
+//=============================================================================================
+// int main()
+
+// {
+//     int a, zbir = 0;
+//     printf("nesite broj\n");
+//     scanf("%d", &a);
+//     while (a != 0)
+//     {
+//         zbir = zbir + a % 10;
+//         a = a / 10;
+//     }
+//     printf("zbir ce da bude - %d\n", zbir);
+// }
+//=============================================================================================
+// int main()
+// {
+//     int broj, a = 0;
+
+//     printf("uneksi broj");
+//     scanf("%d", &broj);
+
+//     while (broj != 0)
+//     {
+//         int temp = broj % 10;
+//         a = a * 10 + temp;
+//         broj = broj / 10;
+//     }
+//     printf("broj je - %d", a);
+// }
+//=============================================================================================
+// fibonacijevi brojevi
+// int main()
+// {
+//     int n, a = 0, b = 1, zbir;
+
+//     printf("unesite broj\n");
+//     scanf("%d", &n);
+
+//     if (n > 1)
+//     {
+//         printf("%d\n", a);
+//     }
+//     if (n > 2)
+//     {
+//         printf("%d\n", b);
+//     }
+
+//     for (int i = 3; i < n; i++)
+//     {
+//         zbir = a + b;
+//         a = b;
+//         b = zbir;
+//         printf("%d\n", b);
+//     }
+// }
+//=============================================================================================
+// int main()
+// {
+//     int a;
+//     printf("unesite broj\n");
+//     scanf("%d", &a);
+//     if (a % 3 == 0 && a % 5 == 0)
+//     {
+//         printf("uneti brij je deljiv i sa 3 i sa 5\n");
+//     }
+//     else if (a % 3 == 0)
+//     {
+//         printf("broj je deljiv sa 3");
+//     }
+//     else if (a % 5 == 0)
+//     {
+//         printf("broj je deljiv sa 5");
+//     }
+// }
+//=============================================================================================
+// int main()
+// {
+//     int a, b, rezultat;
+
+//     printf("unesit a vrednost");
+//     scanf("%d", &a);
+//     printf("unesit b stepen");
+//     scanf("%d", &b);
+
+//     rezultat = pow(a, b);
+//     printf("ovo je stepen broja %d", rezultat);
+// }
+//=================================================================================================
+// int main()
+// {
+//     int a, b, rezultat = 1;
+
+//     printf("unesit a vrednost");
+//     scanf("%d", &a);
+//     printf("unesit b stepen");
+//     scanf("%d", &b);
+
+//     for (int i = 0; i < b; i++)
+//     {
+//         rezultat = rezultat * a; // = 5//25 == 125
+//     }
+//     printf("stepen je %d", rezultat);
+// }
+//=================================================================================================
