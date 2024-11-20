@@ -1609,3 +1609,53 @@
 //     printf("stepen je %d", rezultat);
 // }
 //=================================================================================================
+// // obrnuti broj
+// int main()
+// {
+//     int broj, a = 0;
+
+//     printf("unesi broj");
+//     scanf("%d", &broj);
+
+//     while (broj != 0)
+//     {
+//         // 45
+//         int temp = broj % 10; // 5
+//         a = a * 10 + temp;
+//         broj = broj / 10;
+//     }
+//     printf("%d", a);
+// }
+//=================================================================================================
+// sabrati cifre unetog broja
+
+// int main()
+// {
+//     int broj, zbir = 0;
+
+//     printf("unesi broj");
+//     scanf("%d", &broj);
+
+//     while (broj != 0)
+//     {
+//         int temp = broj % 10;
+//         zbir += temp;
+//         broj = broj / 10;
+//     }
+//     printf("%d", zbir);
+// }
+//=================================================================================================
+// faktorijel
+// int main()
+// {
+//     int broj, faktorijel = 1;
+//     printf("unesi broj");
+//     scanf("%d", &broj);
+
+//     for (int i = 1; i <= broj; i++)
+//     {
+//         faktorijel *= i;
+//     }
+//     printf("%d", faktorijel);
+// }
+//=================================================================================================
