@@ -1659,3 +1659,85 @@
 //     printf("%d", faktorijel);
 // }
 //=================================================================================================
+// savrsen broj
+
+// int main()
+// {
+//     int broj, zbirDelilaca = 0;
+//     printf("unesi broj");
+//     scanf("%d", &broj);
+
+//     for (int i = 1; i < broj; i++)
+//     {
+//         if (broj % i == 0)
+//         {
+//             zbirDelilaca += i;
+//         }
+//     }
+//     printf(zbirDelilaca == broj ? "broj je savrsen" : "nije savrsen");
+// }
+//=================================================================================================
+// prost broj
+// int main()
+// {
+//     int broj;
+//     char prostje[20] = "prost je";
+//     printf("unesi broj");
+//     scanf("%d", &broj);
+
+//     for (int i = 2; i < broj; i++)
+//     {
+//         if (broj % i == 0)
+//         {
+//             strcpy(prostje, "nije prost");
+//             break;
+//         }
+//     }
+//     printf("%s", prostje);
+// }
+//=================================================================================================
+// // kalkulator
+// int main()
+// {
+//     double broj1, broj2, rezultat = 0;
+//     char operator;
+
+//     printf("unesi prvi broj\n");
+//     scanf("%.lf", &broj1);
+
+//     printf("unesi drugi broj\n");
+//     scanf("%lf", &broj2);
+
+//     printf("unesi operator (+ - / *)\n");
+//     scanf(" %c", &operator);
+
+//     switch (operator)
+//     {
+//     case '+':
+//         rezultat = broj1 + broj2;
+//         printf("%.2lf", rezultat);
+//         break;
+//     case '-':
+//         rezultat = broj1 - broj2;
+//         printf("%.2lf", rezultat);
+//         break;
+//     case '*':
+//         rezultat = broj1 * broj2;
+//         printf("%.2lf", rezultat);
+//         break;
+
+//     case '/':
+//         if (broj2 != 0)
+//         {
+//             rezultat = broj1 / broj2;
+//             printf("%.2lf", rezultat);
+//         }
+//         else
+//         {
+//             printf("ne moze se deliti sa 0");
+//         }
+//         break;
+//     default:
+//         printf("izaberi operator od mogucnosti");
+//     }
+// }
