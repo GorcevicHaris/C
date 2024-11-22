@@ -1741,3 +1741,83 @@
 //         printf("izaberi operator od mogucnosti");
 //     }
 // }
+//===========================================================================================================
+// Zadaci sa ispita//
+// 1 zadatak
+//  int main()
+//  {
+//      int broj;
+//      printf("unesi broj");
+//      scanf("%d", &broj);
+
+//     if (broj % 2 == 0)
+//     {
+//         printf("broj je paran");
+//     }
+//     else
+//     {
+//         printf("broj nije paran");
+//     }
+// }
+//===============================================================================================
+// 3 zadatak broj obrnuto i proveri da li je palindrom
+// int main()
+// {
+//     int broj, obrnutiNiz = 0, cuvanjeVrednostiBroj;
+//     printf("unesi broj");
+//     scanf("%d", &broj);
+//     cuvanjeVrednostiBroj = broj;
+//     while (broj != 0)
+//     {
+
+//         int temp = broj % 10;
+//         obrnutiNiz = obrnutiNiz * 10 + temp;
+//         broj /= 10;
+//     }
+//     printf("ovo je obrnuti niz - %d\n", obrnutiNiz);
+//     if (cuvanjeVrednostiBroj == obrnutiNiz)
+//     {
+//         printf("broj je palindrom");
+//     }
+//     else
+//     {
+//         printf("broj nije palindrom");
+//     }
+// }
+//=========================================================================================
+// 2. armsttrongov broj
+// zbir svojih cifara podignut na stepen od broja cifara
+
+// int main()
+// {
+//     int broj, zbirCifaraStepena = 0, duzinaBroja = 0, temp;
+//     printf("unesi broj");
+//     scanf("%d", &broj);
+//     int kopijaBroja = broj;
+//     int drugaKopija = broj;
+//     while (kopijaBroja != 0)
+//     {
+//         duzinaBroja += 1;
+//         kopijaBroja /= 10;
+//     }
+
+//     while (broj != 0)
+//     {
+//         temp = broj % 10;
+//         int zbirStepena = pow(temp, duzinaBroja);
+//         zbirCifaraStepena += zbirStepena;
+//         broj = broj / 10;
+//     }
+
+//     printf("duzina broja je %d zbircifara - %d kopija broja - %d\n", duzinaBroja, zbirCifaraStepena, kopijaBroja);
+//     if (zbirCifaraStepena == drugaKopija)
+//     {
+//         printf("jeste armstrongov broj");
+//     }
+//     else
+//     {
+//         printf("nije");
+//     }
+//     return 0;
+// }
+//========================================================================================
