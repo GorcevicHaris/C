@@ -1785,8 +1785,8 @@
 //     }
 // }
 //=========================================================================================
-// 2. armsttrongov broj
-// zbir svojih cifara podignut na stepen od broja cifara
+// // 2. armsttrongov broj
+// // zbir svojih cifara podignut na stepen od broja cifara
 
 // int main()
 // {
@@ -1821,3 +1821,11 @@
 //     return 0;
 // }
 //========================================================================================
+// int main()
+// {
+//     int a = 1234;
+//     char tekst[20];
+//     sprintf(tekst, "%d", a);
+//     int duzinaAbroja = strlen(tekst);
+//     printf("ovo je length od a %d", duzinaAbroja);
+// }
