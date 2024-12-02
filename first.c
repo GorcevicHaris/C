@@ -1790,7 +1790,7 @@
 
 // int main()
 // {
-//     int broj, zbirCifaraStepena = 0, duzinaBroja = 0, temp;
+//     int broj, zbirCifaraStepena = 0, duzinaBroja = 0;
 //     printf("unesi broj");
 //     scanf("%d", &broj);
 //     int kopijaBroja = broj;
@@ -1803,7 +1803,7 @@
 
 //     while (broj != 0)
 //     {
-//         temp = broj % 10;
+//         int temp = broj % 10;
 //         int zbirStepena = pow(temp, duzinaBroja);
 //         zbirCifaraStepena += zbirStepena;
 //         broj = broj / 10;
@@ -1829,3 +1829,46 @@
 //     int duzinaAbroja = strlen(tekst);
 //     printf("ovo je length od a %d", duzinaAbroja);
 // }
+//========================================================================================
+// // Funkcija koja menja vrednost promenljive pomoću pokazivača
+// void promeniVrednost(int *pokazivac)
+// {
+//     *pokazivac = 42; // Postavlja vrednost na 42
+// }
+
+// int main()
+// {
+//     int broj = 10;
+
+//     printf("Pre promene: %d\n", broj);
+
+//     // Pozivamo funkciju i prosleđujemo adresu promenljive
+//     promeniVrednost(&broj);
+//     broj = 5;
+//     printf("Posle promene: %d\n", broj);
+
+//     return 0;
+// }
+
+//========================================================================================
+// Funkcija koja menja vrednosti na koje pokazivači ukazuju
+// void zameni(int *a, int *b)
+// {
+//     int temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+
+// int main()
+// {
+//     int x, y; // Dve promenljive
+//     printf("unesite prvu zatim drugu vrednost\n");
+//     scanf("%d %d", &x, &y);
+//     printf("Pre zamene: x = %d, y = %d\n", x, y);
+//     zameni(&x, &y);
+
+//     printf("Posle zamene: x = %d, y = %d\n", x, y);
+
+//     return 0;
+// }
+//========================================================================================
