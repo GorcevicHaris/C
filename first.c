@@ -1872,3 +1872,163 @@
 //     return 0;
 // }
 //========================================================================================
+// int main()
+// {
+//     int x = 5, y = 10;
+//     printf("Pre zamene: x = %d, y = %d\n", x, y);
+//     int temp = x;
+//     x = y;
+//     y = temp;
+//     printf("posle zamene: x = %d, y = %d\n", x, y);
+// }
+//========================================================================================
+// int saberi(int a, int b)
+// {
+//     return a + b;
+// }
+// int main()
+// {
+//     int a = 10, b = 20;
+//     int rezultat = saberi(a, b);
+//     printf("%d", rezultat);
+// }
+//========================================================================================
+// void zameni(int *broj1, int *broj2)
+// {
+//     int temp = *broj1;
+//     *broj1 = *broj2;
+//     *broj2 = temp;
+// }
+// int main()
+// {
+//     int a = 10, b = 20;
+//     zameni(&a, &b);
+//     printf("posle zamene a = %d i b = %d", a, b);
+// }
+//========================================================================================
+// void kvadriraj(int *broj)
+// {
+//     *broj = *broj * *broj;
+// }
+// int main()
+// {
+//     int x = 5; // Originalna promenljiva
+
+//     printf("Pre kvadriranja: %d\n", x);
+
+//     kvadriraj(&x); // Prosleđujemo adresu promenljive
+
+//     printf("Posle kvadriranja: %d\n", x);
+//     return 0;
+// }
+//=======================================================================
+// #include <stdio.h>
+
+// #define SIZE 3 // Definišemo veličinu matrica (ovde je 3x3)
+
+// void printMatrix(int matrix[SIZE][SIZE])
+// {
+//     // Ispisivanje matrice
+//     for (int i = 0; i < SIZE; i++)
+//     {
+//         for (int j = 0; j < SIZE; j++)
+//         {
+//             printf("%d ", matrix[i][j]);
+//         }
+//         printf("\n");
+//     }
+// }
+
+// int main()
+// {
+//     int matrixA[SIZE][SIZE], matrixB[SIZE][SIZE];
+
+//     // Unos prve matrice A
+//     printf("Unesite matricu A (%dx%d):\n", SIZE, SIZE);
+//     for (int i = 0; i < SIZE; i++)
+//     {
+//         for (int j = 0; j < SIZE; j++)
+//         {
+//             printf("A[%d][%d] = ", i + 1, j + 1);
+//             scanf("%d", &matrixA[i][j]);
+//         }
+//     }
+
+//     // Unos druge matrice B
+//     printf("Unesite matricu B (%dx%d):\n", SIZE, SIZE);
+//     for (int i = 0; i < SIZE; i++)
+//     {
+//         for (int j = 0; j < SIZE; j++)
+//         {
+//             printf("B[%d][%d] = ", i + 1, j + 1);
+//             scanf("%d", &matrixB[i][j]);
+//         }
+//     }
+
+//     // Ispis matrica
+//     printf("\nMatrica A:\n");
+//     printMatrix(matrixA);
+
+//     printf("\nMatrica B:\n");
+//     printMatrix(matrixB);
+
+//     return 0;
+// }
+//=======================================================================
+// int main()
+// {
+//     int suma = 0;
+//     int n = 2;
+//     int mat[3][3] =
+//         {{1, 21, 3},
+//          {4, 5, 6},
+//          {7, 8, 9}};
+
+//     for (int i = 0; i < 3; i++)
+//     {
+//         suma += mat[i][1];
+//     }
+//     printf("%d", suma);
+// }
+//=======================================================================
+// #define N 3
+// int main()
+// {
+//     int A[N][N] = {
+//         {1, 2, 3},
+//         {4, 5, 6},
+//         {7, 8, 9}};
+//     int B[N][N] = {
+//         {9, 8, 7},
+//         {6, 5, 4},
+//         {3, 2, 1}};
+//     int sum = 0;
+//     for (int i = 0; i < N; i++)
+//     {
+//         for (int y = 0; y < N; y++)
+//         {
+//             sum += A[i][y] + B[i][y];
+//             printf("%d ", A[i][y] + B[i][y]);
+//         }
+//         printf("\n");
+//     }
+//     printf("%d", sum);
+// }
+//=======================================================================
+// // izracunati matrice
+// #include <stdio.h>
+
+// #define N 3 // Dimenzija matrice (3x3)
+
+// int main()
+// {
+//     int A[N][N] = {
+//         {1, 2, 3},
+//         {4, 5, 6},
+//         {7, 8, 9}};
+//     int B[N][N] = {
+//         {9, 8, 7},
+//         {6, 5, 4},
+//         {3, 2, 1}};
+// }
+//=======================================================================
