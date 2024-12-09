@@ -2109,3 +2109,168 @@
 
 //     return 0;
 // }
+//====================================================================================
+// // duzina niza
+// int main()
+// {
+//     int arr[10];
+//     size_t brojElemenata = sizeof(arr) / sizeof(arr[0]);
+//     printf("Ukupna veličina niza: %zu bajtova\n", brojElemenata);
+// }
+//====================================================================================
+// int main()
+// {
+//     int matrica[3][4]; // Matrica sa 3 reda i 4 kolone (ukupno 3*4=12 elemenata)
+
+//     size_t ukupnaVelicina = sizeof(matrica);                        // Ukupna veličina matrice u bajtovima
+//     size_t velicinaJednogElementa = sizeof(matrica[0][0]);          // Veličina jednog elementa matrice
+//     size_t brojElemenata = ukupnaVelicina / velicinaJednogElementa; // Broj elemenata u matrici
+
+//     size_t brojRedova = sizeof(matrica) / sizeof(matrica[0]);       // Broj redova
+//     size_t brojKolona = sizeof(matrica[0]) / sizeof(matrica[0][0]); // Broj kolona
+
+//     printf("Ukupna veličina matrice: %zu bajtova\n", ukupnaVelicina);
+//     printf("Veličina jednog elementa: %zu bajtova\n", velicinaJednogElementa);
+//     printf("Broj elemenata u matrici: %zu\n", brojElemenata);
+//     printf("Broj redova: %zu\n", brojRedova);
+//     printf("Broj kolona: %zu\n", brojKolona);
+
+//     return 0;
+// }
+//====================================================================================
+// int faktorijel(int n)
+// {
+//     if (n == 0)
+//     {
+//         return 1;
+//     }
+//     else
+//     {
+//         return n * faktorijel(n - 1);
+//     }
+// }
+
+// int main()
+// {
+//     int broj;
+
+//     printf("unesi broj\n");
+//     scanf("%d", &broj);
+
+//     printf("rezultat faktorijela je %d\n", faktorijel(broj));
+// }
+//====================================================================================
+// // Pokazivac
+// void zameniVrednosti(int *a, int *b)
+// {
+//     int temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+// int main()
+// {
+//     int a = 5, b = 10;
+//     printf("trenutne vrednosti a = %d i b = %d\n", a, b);
+//     zameniVrednosti(&a, &b);
+//     printf("promenjene vrednosti a = %d b = %d\n", a, b);
+// }
+//====================================================================================
+// #include <stdio.h>
+
+// int findMax(int *niz, int size)
+// {
+//     int max = *niz;
+//     for (int i = 1; i < size; i++)
+//     {
+//         if (*(niz + i) > max)
+//         {
+//             max = *(niz + i);
+//             printf("%d ovo je niz + i", max);
+//         }
+//     }
+//     return max;
+// }
+
+// int main()
+// {
+//     int numbers[] = {1, 2, 35, 4, 3, 55};
+//     int size = sizeof(numbers) / sizeof(numbers[0]);
+
+//     int max = findMax(numbers, size);
+
+//     printf("Najveći broj u nizu je: %d\n", max);
+//     return 0;
+// }
+//====================================================================================
+// napisi program koji transponuje matricu koristeci funkciju i pokazivace
+// korinsik unosi dimenzije i elemente
+// moras ovo da uradis sa funkcijom i pokazivacima
+// int main()
+// {
+//     int a, b;
+//     printf("unesi dimenzije matrice  a \n");
+//     scanf("%d", &a);
+//     scanf("%d", &b);
+//     int mat[a][b];
+//     size_t redovi = sizeof(mat) / sizeof(mat[0]);
+//     size_t kolone = sizeof(mat[0]) / sizeof(mat[0][0]);
+
+//     printf("%zu", kolone);
+//     printf("Unesi elemente matrice:\n");
+//     for (int i = 0; i < a; i++)
+//     {
+//         for (int j = 0; j < b; j++)
+//         {
+//             scanf("%d", &mat[i][j]);
+//         }
+//     }
+//     for (int i = 0; i < kolone; i++)
+//     {
+//         for (int y = 0; y < redovi; y++)
+//         {
+//             int fakeniz = mat[y][i];
+//             // printf("%d ", mat[y][i]);
+//             printf("%d", fakeniz);
+//         }
+//         printf("\n");
+//     }
+// }
+//====================================================================================
+void transponovana(int *matrica, int rows, int columns, int *transpon)
+{
+    for (int i = 0; i < columns; i++)
+    {
+        for (int y = 0; y < rows; y++)
+        {
+            *(transpon + y * columns + i) = *(matrica + i * columns + y);
+        }
+    }
+}
+int main()
+{
+    int a, b;
+    printf("unesite dimenzije matrice\n");
+    scanf("%d %d", &a, &b);
+    int matrica[a][b];
+    int transpon[a][b];
+    size_t brojredova = sizeof(matrica) / sizeof(matrica[0]);
+    size_t brojkolona = sizeof(matrica[0]) / sizeof(matrica[0][0]);
+    printf("unesite vase elemente matrice\n");
+    for (int i = 0; i < brojredova; i++)
+    {
+        for (int y = 0; y < brojkolona; y++)
+        {
+            scanf("%d", &matrica[i][y]);
+        }
+    }
+    transponovana((int *)matrica, brojredova, brojkolona, (int *)transpon);
+
+    for (int i = 0; i < brojkolona; i++)
+    {
+        for (int j = 0; j < brojredova; j++)
+        {
+            printf("%d ", transpon[j][i]);
+        }
+        printf("\n");
+    }
+}
