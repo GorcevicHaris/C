@@ -2020,15 +2020,92 @@
 
 // #define N 3 // Dimenzija matrice (3x3)
 
+//=======================================================================
+// int main()
+// {
+//     int a, b, c, d;
+//     int suma = 0;
+
+//     printf("unesite koja ce da bude duzina matrice a\n");
+//     scanf("%d", &a);
+//     scanf("%d", &b);
+
+//     printf("unesite koja ce da bude duzina matrice b\n");
+//     scanf("%d", &c);
+//     scanf("%d", &d);
+//     if (a != c && b != d)
+//     {
+//         printf("Moraju imati iste dimenzije");
+//     }
+//     int A[a][b], B[c][d];
+
+//     printf("Unesite elemente matrice A :\n");
+//     for (int i = 0; i < a; i++)
+//     {
+//         for (int y = 0; y < a; y++)
+//         {
+//             printf("unesi elemeni A[%d][%d]:", i + 1, y + 1);
+//             scanf("%d", &A[i][y]);
+//         }
+//     }
+
+//     for (int i = 0; i < a; i++)
+//     {
+//         for (int y = 0; y < a; y++)
+//         {
+//             printf("unesi elemeni B[%d][%d]:", i + 1, y + 1);
+//             scanf("%d", &B[i][y]);
+//         }
+//     }
+
+//     for (int i = 0; i < a; i++)
+//     {
+//         for (int y = 0; y < a; y++)
+//         {
+//             suma += A[i][y] + B[i][y];
+//         }
+//     }
+//     printf("%d", suma);
+// }
+//=======================================================================
+// #include <stdio.h>
+
+// #define N 3
+
 // int main()
 // {
 //     int A[N][N] = {
 //         {1, 2, 3},
 //         {4, 5, 6},
 //         {7, 8, 9}};
+
 //     int B[N][N] = {
 //         {9, 8, 7},
 //         {6, 5, 4},
 //         {3, 2, 1}};
+
+//     int C[N][N];
+//     for (int i = 0; i < N; i++)
+//     {
+//         for (int y = 0; y < N; y++)
+//         {
+//             C[i][y] = 0;
+//             for (int z = 0; z < N; z++)
+//             {
+//                 C[i][y] += A[y][z] * B[z][i];
+//             }
+//         }
+//     }
+
+//     printf("\nMatrica A * B (proizvod):\n");
+//     for (int i = 0; i < N; i++)
+//     {
+//         for (int y = 0; y < N; y++)
+//         {
+//             printf("%d ", C[i][y]);
+//         }
+//         printf("\n");
+//     }
+
+//     return 0;
 // }
-//=======================================================================
