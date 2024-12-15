@@ -2236,41 +2236,201 @@
 //     }
 // }
 //====================================================================================
-void transponovana(int *matrica, int rows, int columns, int *transpon)
+// void transponovana(int *matrica, int rows, int columns, int *transpon)
+// {
+//     for (int i = 0; i < columns; i++)
+//     {
+//         for (int y = 0; y < rows; y++)
+//         {
+//             *(transpon + y * columns + i) = *(matrica + y * columns + i);
+//         }
+//     }
+// }
+// int main()
+// {
+//     int a, b;
+//     printf("unesite dimenzije matrice\n");
+//     scanf("%d %d", &a, &b);
+//     int matrica[a][b];
+//     int transpon[a][b];
+//     size_t brojredova = sizeof(matrica) / sizeof(matrica[0]);
+//     size_t brojkolona = sizeof(matrica[0]) / sizeof(matrica[0][0]);
+//     printf("unesite vase elemente matrice\n");
+//     for (int i = 0; i < brojredova; i++)
+//     {
+//         for (int y = 0; y < brojkolona; y++)
+//         {
+//             scanf("%d", &matrica[i][y]);
+//         }
+//     }
+//     transponovana((int *)matrica, brojredova, brojkolona, (int *)transpon);
+
+//     for (int i = 0; i < brojkolona; i++)
+//     {
+//         for (int j = 0; j < brojredova; j++)
+//         {
+//             printf("%d ", transpon[j][i]);
+//         }
+//         printf("\n");
+//     }
+// }
+//====================================================================================
+// void transponovano(int *matrica, int kolona, int red, int *transponovana)
+// {
+//     for (int i = 0; i < kolona; i++)
+//     {
+//         for (int y = 0; y < red; y++)
+//         {
+//             *(transponovana + y * kolona + i) = *(matrica + y * kolona + i);
+//         }
+//     }
+// }
+
+// int main()
+// {
+//     int a, b;
+//     printf("unesite dimenzije matrice\n");
+//     scanf("%d %d", &a, &b);
+//     int matrica[a][b];
+//     int transpon[a][b];
+//     size_t brojredova = sizeof(matrica) / sizeof(matrica[0]);
+//     size_t brojkolona = sizeof(matrica[0]) / sizeof(matrica[0][0]);
+
+//     for (int i = 0; i < brojredova; i++)
+//     {
+//         for (int y = 0; y < brojkolona; y++)
+//         {
+//             scanf("%d", &matrica[i][y]);
+//         }
+//     }
+
+//     transponovano((int *)matrica, brojkolona, brojredova, (int *)transpon);
+
+//     for (int i = 0; i < brojkolona; i++)
+//     {
+//         for (int y = 0; y < brojredova; y++)
+//         {
+//             printf("%d ", transpon[y][i]);
+//         }
+//         printf("\n");
+//     }
+// }
+//====================================================================================
+// pokusaj
+// int main()
+// {
+//     int a, b;
+//     printf("unesi dimenzije matrice\n");
+//     scanf("%d %d", &a, &b);
+//     int matrica[a][b];
+//     size_t duzinaReda = sizeof(matrica) / sizeof(matrica[0]);
+//     size_t duzinaKolone = sizeof(matrica[0]) / sizeof(matrica[0][0]);
+
+//     printf("unesi elemente matrice\n");
+
+//     for (int i = 0; i < duzinaReda; i++)
+//     {
+//         for (int y = 0; y < duzinaKolone; y++)
+//         {
+//             scanf("%d", &matrica[i][y]);
+//         }
+//     }
+//     for (int i = 0; i < duzinaReda; i++)
+//     {
+//         for (int y = 0; y < duzinaKolone; y++)
+//         {
+//             printf("%d ", matrica[i][y]);
+//         }
+//         printf("\n");
+//     }
+//     for (int i = 0; i < duzinaReda; i++)
+//     {
+//         for (int y = 0; y < duzinaKolone; y++)
+//         {
+//             printf("%d ", matrica[y][i]);
+//         }
+//         printf("\n");
+//     }
+// }
+//====================================================================================
+// #include <stdio.h>
+
+// // Funkcija za razmenu dva elementa
+// void swap(int *a, int *b)
+// {
+//     int temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+
+// // Funkcija za generisanje permutacija korišćenjem backtracking-a
+// void permute(int *niz, int start, int end)
+// {
+//     // Kada dostignemo kraj niza, ispisujemo permutaciju
+//     if (start == end)
+//     {
+//         for (int i = 0; i <= end; i++)
+//         {
+//             printf("%d ", niz[i]);
+//         }
+//         printf("\n");
+//         return;
+//     }
+
+//     // Generisanje permutacija za svaki element od start do end
+//     for (int i = start; i <= end; i++)
+//     {
+//         // Zameni niz[start] i niz[i]
+//         swap(&niz[start], &niz[i]);
+
+//         // Poziv funkcije rekurzivno sa sledećim indeksom
+//         permute(niz, start + 1, end);
+
+//         // Vratimo stanje niza, swap opet da bi smo generisali druge permutacije
+//         swap(&niz[start], &niz[i]);
+//     }
+// }
+
+// int main()
+// {
+//     int niz[] = {3, 2, 1};
+//     int n = sizeof(niz) / sizeof(niz[0]);
+//     // Poziv funkcije za generisanje permutacija
+//     permute(niz, 0, n - 1);
+
+//     return 0;
+// }
+//====================================================================================
+void swap(int *a, int *b)
 {
-    for (int i = 0; i < columns; i++)
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+void permute(int *niz, int start, int end)
+{
+    if (start == end)
     {
-        for (int y = 0; y < rows; y++)
+        for (int i = 0; i <= end; i++)
         {
-            *(transpon + y * columns + i) = *(matrica + i * columns + y);
+            printf("%d", niz[i]);
         }
+        printf("\n");
+        return;
+    }
+
+    for (int i = start; i <= end; i++)
+    {
+        swap(&niz[start], &niz[i]);
+
+        permute(niz, start + 1, end);
+
+        swap(&niz[start], &niz[i]);
     }
 }
 int main()
 {
-    int a, b;
-    printf("unesite dimenzije matrice\n");
-    scanf("%d %d", &a, &b);
-    int matrica[a][b];
-    int transpon[a][b];
-    size_t brojredova = sizeof(matrica) / sizeof(matrica[0]);
-    size_t brojkolona = sizeof(matrica[0]) / sizeof(matrica[0][0]);
-    printf("unesite vase elemente matrice\n");
-    for (int i = 0; i < brojredova; i++)
-    {
-        for (int y = 0; y < brojkolona; y++)
-        {
-            scanf("%d", &matrica[i][y]);
-        }
-    }
-    transponovana((int *)matrica, brojredova, brojkolona, (int *)transpon);
-
-    for (int i = 0; i < brojkolona; i++)
-    {
-        for (int j = 0; j < brojredova; j++)
-        {
-            printf("%d ", transpon[j][i]);
-        }
-        printf("\n");
-    }
+    int niz[] = {1, 2, 3};
+    int end = sizeof(niz) / sizeof(niz[0]);
+    permute(niz, 0, end - 1);
 }
