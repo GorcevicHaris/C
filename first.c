@@ -2522,8 +2522,9 @@
 //             {
 //                 brojReci++;
 //                 uReci = 1;
-//             }
+//             }else{
 //             uReci = 0;
+// }
 //         }
 //     }
 //     printf("Broj reči: %d\n", brojReci);
@@ -2531,3 +2532,56 @@
 //     return 0;
 // }
 // //====================================================================================
+// int main()
+// {
+//     char recenica[1000];
+//     int brojKaraktera = 0;
+
+//     printf("Unesite recenicu: ");
+//     fgets(recenica, sizeof(recenica), stdin);
+
+//     // Prolazak kroz recenicu
+//     for (int i = 0; recenica[i] != '\0'; i++)
+//     {
+//         if (recenica[i] != ' ' && recenica[i] != '\n')
+//         {
+//             brojKaraktera++;
+//         }
+//     }
+
+//     printf("Broj karaktera bez razmaka: %d\n", brojKaraktera);
+
+//     return 0;
+// }
+// //====================================================================================
+// #include <stdio.h>
+
+// #define SIZE 5
+
+// int main()
+// {
+//     int niz[SIZE] = {10, 20, 30, 40, 50};
+//     int start = 0; // Početni indeks
+//     for (int i = 0; i < 10; i++)
+//     { // Prolazak kroz niz više puta
+//         printf("%d ", niz[(start + i) % SIZE]);
+//     }
+//     return 0;
+// }
+// //====================================================================================
+#include <stdio.h>
+
+int main()
+{
+    int broj = 10;          // Obična promenljiva
+    int *pokazivac = &broj; // Pokazivač na promenljivu 'broj'
+
+    // Indirektno pristupamo vrednosti promenljive 'broj' pomoću pokazivača
+    printf("Vrednost broj: %d\n", *pokazivac); // *pokazivac koristi indirekciju za pristup 'broj'
+
+    // Takođe možemo koristiti pokazivač za promenu vrednosti
+    *pokazivac = 20; // Promena vrednosti 'broj' indirektno putem pokazivača
+    printf("Nova vrednost broj: %d\n", broj);
+
+    return 0;
+}
