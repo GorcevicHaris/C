@@ -2532,6 +2532,92 @@
 //     return 0;
 // }
 // //====================================================================================
+
+// //====================================================================================
+// #include <stdio.h>
+
+// #define SIZE 5
+
+// int main()
+// {
+//     int niz[SIZE] = {10, 20, 30, 40, 50};
+//     int start = 0; // Početni indeks
+//     for (int i = 0; i < 10; i++)
+//     { // Prolazak kroz niz više puta
+//         printf("%d ", niz[(start + i) % SIZE]);
+//     }
+//     return 0;
+// }
+// //====================================================================================
+//     #include <stdio.h>
+
+// int main()
+// {
+//     int broj = 10;          // Obična promenljiva
+//     int *pokazivac = &broj; // Pokazivač na promenljivu 'broj'
+
+//     // Indirektno pristupamo vrednosti promenljive 'broj' pomoću pokazivača
+//     printf("Vrednost broj: %d\n", *pokazivac); // *pokazivac koristi indirekciju za pristup 'broj'
+
+//     // Takođe možemo koristiti pokazivač za promenu vrednosti
+//     *pokazivac = 20; // Promena vrednosti 'broj' indirektno putem pokazivača
+//     printf("Nova vrednost broj: %d\n", broj);
+
+//     return 0;
+// }
+// //====================================================================================
+// #include <stdio.h>
+// #include <string.h>
+
+// int main()
+// {
+//     char str1[] = "apple";
+//     char str2[] = "orange";
+
+//     // Upoređivanje stringova
+//     int result = strcmp(str1, str2);
+//     if (result == 0)
+//     {
+//         printf("Stringovi su isti.\n");
+//     }
+//     else if (result < 0)
+//     {
+//         printf("Prvi string je manji od drugog.\n");
+//     }
+//     else
+//     {
+//         printf("Prvi string je veći od drugog.\n");
+//     }
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <string.h>
+// //====================================================================================
+// #include <stdio.h>
+// #include <string.h>
+
+// int main()
+// {
+//     const char *tekst = "Ovo je primer za funkciju strstr.";
+//     const char *podstring = "primer";
+
+//     // Tražimo podstring u tekstu
+//     char *rezultat = strstr(tekst, podstring);
+
+//     if (rezultat != NULL)
+//     {
+//         printf("Podstring '%s' pronađen na poziciji: %ld\n", podstring, rezultat - tekst);
+//     }
+//     else
+//     {
+//         printf("Podstring '%s' nije pronađen.\n", podstring);
+//     }
+
+//     return 0;
+// }
+//====================================================================================
 // int main()
 // {
 //     char recenica[1000];
@@ -2553,35 +2639,334 @@
 
 //     return 0;
 // }
-// //====================================================================================
-// #include <stdio.h>
+//====================================================================================
+// // a)Написати функцију која проверава да ли је дати стринг палиндром.​
 
-// #define SIZE 5
+// void polindrom()
+// {
+// }
+// int main()
+// {
+//     char ime[10] = "anasdas";
+//     size_t duzinaString = strlen(ime);
+//     char niz[duzinaString];
+//     // printf("%zu", duzinaString);
+
+//     for (int i = 0; i < duzinaString; i++)
+//     {
+//         niz[i] = ime[i];
+//     }
+
+//     int ispolindrom = 1;
+//     for (int i = 0; i < duzinaString; i++)
+//     {
+//         if (niz[i] != ime[duzinaString - 1 - i])
+//         {
+//             ispolindrom = 0;
+//             break;
+//         }
+//     }
+
+//     if (ispolindrom)
+//     {
+//         printf("jeste polindrom");
+//     }
+//     else
+//     {
+//         printf("nije");
+//     }
+// }
+//====================================================================================
+// // palindrom za stringove sa funkcijama
+// int isPalindrom(char ime[])
+// {
+//     size_t duzinaStringa = strlen(ime);
+//     char niz[duzinaStringa];
+
+//     for (int i = 0; i < duzinaStringa; i++)
+//     {
+//         niz[i] = ime[i];
+//     }
+//     int isPalindrom = 1;
+//     for (int i = 0; i < duzinaStringa; i++)
+//     {
+//         if (niz[i] != ime[duzinaStringa - 1 - i])
+//         {
+//             isPalindrom = 0;
+//             break;
+//         }
+//     }
+//     return isPalindrom;
+// }
 
 // int main()
 // {
-//     int niz[SIZE] = {10, 20, 30, 40, 50};
-//     int start = 0; // Početni indeks
-//     for (int i = 0; i < 10; i++)
-//     { // Prolazak kroz niz više puta
-//         printf("%d ", niz[(start + i) % SIZE]);
+//     char ime[120] = "anavolimilovana";
+//     if (isPalindrom(ime))
+//     {
+//         printf("jeste polindrom\n");
+//     }
+//     else
+//     {
+//         printf("nije\n");
+//     }
+// }
+//====================================================================================
+// Napisati funkciiju koja racuna duzinu stringa
+
+// int duzinaStringa(char ime[])
+// {
+//     int duzina = 0;
+
+//     while (ime[duzina] != '\0')
+//     {
+//         duzina++;
+//     }
+//     return duzina;
+// }
+// int main()
+// {
+//     char ime[] = "ana";
+
+//     printf("duzina strina ime je %d", duzinaStringa(ime));
+// }
+//==========================================================================================
+// size_t duzinaStringa(char ime[])
+// {
+//     return strlen(ime);
+// }
+// int main()
+// {
+//     char ime[] = "ana";
+
+//     printf("duzina strina ime je %zu", duzinaStringa(ime));
+//     return 0;
+// }
+//==========================================================================================
+// #define MAX_SIZE 10
+// #include <limits.h>
+// #include <string.h>
+// #include <stdio.h>
+
+// void izbaci_sa_pocetka(int *niz, int *velicina)
+// {
+//     if (*velicina > 0)
+//     {
+//         for (int i = 0; i < *velicina - 1; i++)
+//         {
+//             niz[i] = niz[i + 1];
+//         }
+//         (*velicina)--;
+//         printf("prvi element je izbacen\n");
+//     }
+//     else
+//     {
+//         printf("niz je prazan\n");
+//     }
+// }
+// int postojiParniBroj(int *niz, int *velicina)
+// {
+//     for (int i = 0; i < *velicina; i++)
+//     {
+//         if (niz[i] % 2 == 0)
+//         {
+//             return 1;
+//         }
 //     }
 //     return 0;
 // }
-// //====================================================================================
-#include <stdio.h>
+// int najmanjiParniBroj(int *niz, int velicina)
+// {
+//     int min = INT_MAX;
+//     int postoji = 0;
+//     for (int i = 0; i < velicina; i++)
+//     {
+//         if (niz[i] % 2 == 0 && niz[i] < min)
+//         {
+//             min = niz[i];
+//             postoji = 1;
+//         }
+//     }
+//     return postoji ? min : -1;
+// }
+// void meni(int *niz, int *velicina)
+// {
+//     int opcija;
+//     do
+//     {
+//         printf("\nMeni:\n");
+//         printf("1 - Izbaci prvi element\n");
+//         printf("2 - Proveri da li postoji parni broj\n");
+//         printf("3 - Pronadji najmanji parni broj\n");
+//         printf("0 - Izlaz\n");
+//         printf("Izaberite opciju: ");
+//         scanf("%d", &opcija);
 
+//         switch (opcija)
+//         {
+//         case 1:
+//             izbaci_sa_pocetka(niz, velicina);
+//             break;
+//         case 2:
+//             if (postojiParniBroj(niz, velicina))
+//             {
+//                 printf("postoji parni broj");
+//             }
+//             else
+//             {
+//                 printf("ne postoji parni broj");
+//             }
+//             break;
+//         case 3:
+//             if (najmanjiParniBroj(niz, *velicina) != -1)
+//             {
+//                 printf("Najmanji parni broj u nizu je: %d\n", najmanjiParniBroj(niz, *velicina));
+//             }
+//             else
+//             {
+//                 printf("U nizu nema parnih brojeva.\n");
+//             }
+//             break;
+//         case 0:
+//             printf("izlaz iz programa.\n");
+//             break;
+//         default:
+//             printf("Ne postoji opcija koju ste izabrali\n");
+//         }
+//     } while (opcija != 0);
+// }
+
+// void zadatak_2()
+// {
+//     int niz[MAX_SIZE], velicina;
+
+//     printf("Unesite velicinu niza: \n");
+//     scanf("%d", &velicina);
+
+//     printf("Unesite elemente niza: \n");
+//     for (int i = 0; i < velicina; i++)
+//     {
+//         scanf("%d", &niz[i]);
+//     }
+//     meni(niz, &velicina);
+// }
+// int main()
+// {
+//     zadatak_2();
+//     return 0;
+// }
+//==========================================================================================
+#define MAX 10
+#include <limits.h>
+int izbaciSaPocetka(int *niz, int *duzina)
+{
+    if (*duzina > 0)
+    {
+        for (int i = 0; i < *duzina - 1; i++)
+        {
+            niz[i] = niz[i + 1];
+        }
+        (*duzina)--;
+        printf("prvi element je izbacen\n");
+    }
+    else
+    {
+        printf("Niz je prazan\n");
+    }
+    return 0;
+}
+
+int postojiLiParni(int *niz, int *duzina)
+{
+    int postoji = 0;
+    for (int i = 0; i < *duzina; i++)
+    {
+        if (niz[i] % 2 == 0)
+        {
+            postoji = 1;
+        }
+    }
+    if (postoji)
+    {
+        printf("postoji parni\n");
+    }
+    else
+    {
+        printf("ne postoji parni\n");
+    }
+
+    return 0;
+}
+
+int najmanjiParniBroj(int *niz, int *duzina)
+{
+    int min = INT_MAX;
+    int ima = 0;
+    for (int i = 0; i < *duzina; i++)
+    {
+        if (niz[i] % 2 == 0 && niz[i] < min)
+        {
+            min = niz[i];
+            ima = 1;
+        }
+    }
+    if (ima)
+    {
+        printf("ovo je najmanji parni broj %d", min);
+    }
+    else
+    {
+        printf("nema najmanji parni broj");
+    }
+    return 0;
+}
+
+int meni(int *niz, int *duzina)
+{
+    int opcija;
+    do
+    {
+        printf("\nMeni:\n");
+        printf("1 - izbaci element u nizu\n");
+        printf("2 - da li postoji parni broj\n");
+        printf("3 - Najmanji parni broj\n");
+        printf("0 - izlaz iz programa\n");
+        printf("izaberite opciju\n");
+        scanf("%d", &opcija);
+
+        switch (opcija)
+        {
+        case 1:
+            izbaciSaPocetka(niz, duzina);
+            break;
+        case 2:
+            postojiLiParni(niz, duzina);
+            break;
+        case 3:
+            najmanjiParniBroj(niz, duzina);
+            break;
+        default:
+            printf("ne postoji opcija koju ste izabrali pokusajte ponovo");
+        }
+    } while (opcija != 0);
+
+    return 0;
+}
+void zadatak2()
+{
+    int niz[MAX], duzina;
+    printf("unesi duzinu niza\n");
+    scanf("%d", &duzina);
+    printf("unesi elemente niza\n");
+
+    for (int i = 0; i < duzina; i++)
+    {
+        scanf("%d", &niz[i]);
+    }
+    meni(niz, &duzina);
+}
 int main()
 {
-    int broj = 10;          // Obična promenljiva
-    int *pokazivac = &broj; // Pokazivač na promenljivu 'broj'
-
-    // Indirektno pristupamo vrednosti promenljive 'broj' pomoću pokazivača
-    printf("Vrednost broj: %d\n", *pokazivac); // *pokazivac koristi indirekciju za pristup 'broj'
-
-    // Takođe možemo koristiti pokazivač za promenu vrednosti
-    *pokazivac = 20; // Promena vrednosti 'broj' indirektno putem pokazivača
-    printf("Nova vrednost broj: %d\n", broj);
-
+    zadatak2();
     return 0;
 }

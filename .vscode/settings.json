@@ -5,6 +5,7 @@
     "string": "c",
     "string_view": "c",
     "bitset": "c",
-    "unordered_map": "c"
+    "unordered_map": "c",
+    "cmath": "c"
   }
 }
