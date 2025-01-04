@@ -3,6 +3,8 @@
 #include <ctype.h>
 #include <math.h>
 #include <stdbool.h>
+#define MAX 10
+#include <limits.h>
 // Zadatak 1
 //  int main()
 //  {
@@ -2856,117 +2858,183 @@
 //     return 0;
 // }
 //==========================================================================================
-#define MAX 10
-#include <limits.h>
-int izbaciSaPocetka(int *niz, int *duzina)
-{
-    if (*duzina > 0)
-    {
-        for (int i = 0; i < *duzina - 1; i++)
-        {
-            niz[i] = niz[i + 1];
-        }
-        (*duzina)--;
-        printf("prvi element je izbacen\n");
-    }
-    else
-    {
-        printf("Niz je prazan\n");
-    }
-    return 0;
-}
 
-int postojiLiParni(int *niz, int *duzina)
-{
-    int postoji = 0;
-    for (int i = 0; i < *duzina; i++)
-    {
-        if (niz[i] % 2 == 0)
-        {
-            postoji = 1;
-        }
-    }
-    if (postoji)
-    {
-        printf("postoji parni\n");
-    }
-    else
-    {
-        printf("ne postoji parni\n");
-    }
+// int izbaciSaPocetka(int *niz, int *duzina)
+// {
+//     if (*duzina > 0)
+//     {
+//         for (int i = 0; i < *duzina - 1; i++)
+//         {
+//             niz[i] = niz[i + 1];
+//         }
+//         (*duzina)--;
+//         printf("prvi element je izbacen\n");
+//     }
+//     else
+//     {
+//         printf("Niz je prazan\n");
+//     }
+//     return 0;
+// }
 
-    return 0;
-}
+// int postojiLiParni(int *niz, int *duzina)
+// {
+//     int postoji = 0;
+//     for (int i = 0; i < *duzina; i++)
+//     {
+//         if (niz[i] % 2 == 0)
+//         {
+//             postoji = 1;
+//         }
+//     }
+//     if (postoji)
+//     {
+//         printf("postoji parni\n");
+//     }
+//     else
+//     {
+//         printf("ne postoji parni\n");
+//     }
 
-int najmanjiParniBroj(int *niz, int *duzina)
-{
-    int min = INT_MAX;
-    int ima = 0;
-    for (int i = 0; i < *duzina; i++)
-    {
-        if (niz[i] % 2 == 0 && niz[i] < min)
-        {
-            min = niz[i];
-            ima = 1;
-        }
-    }
-    if (ima)
-    {
-        printf("ovo je najmanji parni broj %d", min);
-    }
-    else
-    {
-        printf("nema najmanji parni broj");
-    }
-    return 0;
-}
+//     return 0;
+// }
 
-int meni(int *niz, int *duzina)
-{
-    int opcija;
-    do
-    {
-        printf("\nMeni:\n");
-        printf("1 - izbaci element u nizu\n");
-        printf("2 - da li postoji parni broj\n");
-        printf("3 - Najmanji parni broj\n");
-        printf("0 - izlaz iz programa\n");
-        printf("izaberite opciju\n");
-        scanf("%d", &opcija);
+// int najmanjiParniBroj(int *niz, int *duzina)
+// {
+//     int min = INT_MAX;
+//     int ima = 0;
+//     for (int i = 0; i < *duzina; i++)
+//     {
+//         if (niz[i] % 2 == 0 && niz[i] < min)
+//         {
+//             min = niz[i];
+//             ima = 1;
+//         }
+//     }
+//     if (ima)
+//     {
+//         printf("ovo je najmanji parni broj %d", min);
+//     }
+//     else
+//     {
+//         printf("nema najmanji parni broj");
+//     }
+//     return 0;
+// }
 
-        switch (opcija)
-        {
-        case 1:
-            izbaciSaPocetka(niz, duzina);
-            break;
-        case 2:
-            postojiLiParni(niz, duzina);
-            break;
-        case 3:
-            najmanjiParniBroj(niz, duzina);
-            break;
-        default:
-            printf("ne postoji opcija koju ste izabrali pokusajte ponovo");
-        }
-    } while (opcija != 0);
+// int meni(int *niz, int *duzina)
+// {
+//     int opcija;
+//     do
+//     {
+//         printf("\nMeni:\n");
+//         printf("1 - izbaci element u nizu\n");
+//         printf("2 - da li postoji parni broj\n");
+//         printf("3 - Najmanji parni broj\n");
+//         printf("0 - izlaz iz programa\n");
+//         printf("izaberite opciju\n");
+//         scanf("%d", &opcija);
 
-    return 0;
-}
-void zadatak2()
-{
-    int niz[MAX], duzina;
-    printf("unesi duzinu niza\n");
-    scanf("%d", &duzina);
-    printf("unesi elemente niza\n");
+//         switch (opcija)
+//         {
+//         case 1:
+//             izbaciSaPocetka(niz, duzina);
+//             break;
+//         case 2:
+//             postojiLiParni(niz, duzina);
+//             break;
+//         case 3:
+//             najmanjiParniBroj(niz, duzina);
+//             break;
+//         default:
+//             printf("ne postoji opcija koju ste izabrali pokusajte ponovo");
+//         }
+//     } while (opcija != 0);
 
-    for (int i = 0; i < duzina; i++)
-    {
-        scanf("%d", &niz[i]);
-    }
-    meni(niz, &duzina);
-}
-int main()
-{
-    zadatak2();
-    return 0;
-}
+//     return 0;
+// }
+// void zadatak2()
+// {
+//     int niz[MAX], duzina;
+//     printf("unesi duzinu niza\n");
+//     scanf("%d", &duzina);
+//     printf("unesi elemente niza\n");
+
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         scanf("%d", &niz[i]);
+//     }
+//     meni(niz, &duzina);
+// }
+// int main()
+// {
+//     zadatak2();
+//     return 0;
+// }
+//===========================================================================================
+// int main()
+// {
+//     int niz[MAX], duzina;
+//     int min = INT_MAX;
+//     printf("unesi duzinu niza\n");
+//     scanf("%d", &duzina);
+//     printf("unesi elemente\n");
+
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         scanf("%d", &niz[i]);
+//     }
+
+//     if (duzina > 0)
+//     {
+//         for (int i = 0; i < duzina - 1; i++)
+//         {
+//             niz[i] = niz[i + 1];
+//         }
+//         duzina--;
+//     }
+//     printf("ovo je novi niz \n");
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         printf(" %d", niz[i]);
+//     }
+// }
+//===========================================================================================
+// int isPalindrom(char ime[])
+// {
+//     int duzinaStringa = 0;
+
+//     while (ime[duzinaStringa] != '\0')
+//     {
+//         duzinaStringa++;
+//     }
+//     printf("ovo je duzinaStringa %d\n", duzinaStringa);
+//     int copy[duzinaStringa];
+//     for (int i = 0; i < duzinaStringa; i++)
+//     {
+//         copy[i] = ime[i];
+//     }
+//     int isPalindrom = 1;
+//     for (int i = 0; i < duzinaStringa; i++)
+//     {
+//         if (copy[i] != ime[duzinaStringa - i - 1])
+//         {
+//             isPalindrom = 0;
+//             break;
+//         }
+//     }
+//     return isPalindrom;
+// }
+// int main()
+// {
+//     char ime[] = "anda";
+//     if (isPalindrom(ime))
+//     {
+//         printf("palindrom je");
+//     }
+//     else
+//     {
+//         printf("nije palindrom ");
+//     }
+// }
+//===========================================================================================
