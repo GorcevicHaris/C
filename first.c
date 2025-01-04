@@ -3038,3 +3038,55 @@
 //     }
 // }
 //===========================================================================================
+// da li je kolona od matrice palindrom
+// gde god sam stavio col -1 to znaci da mi ispisuje kada unosim col da umesto sto bih uneo 0 to je 1
+int isMatPalindrom(int mat[MAX][MAX], int rows, int col)
+{
+    int isPalindrom = 1;
+    for (int i = 0; i < rows / 2; i++)
+    {
+        if (mat[i][col - 1] != mat[rows - 1 - i][col - 1])
+        {
+            printf(" ovo je %d", mat[i][col - 1]);
+            return isPalindrom = 0;
+        }
+    }
+    return isPalindrom;
+}
+int main()
+{
+    int mat[MAX][MAX];
+    int rows, cols;
+    printf("unesi duzinu matrice\n");
+    scanf("%d %d", &rows, &cols);
+
+    printf("unesi elemente matrice\n");
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int y = 0; y < cols; y++)
+        {
+            scanf("%d", &mat[i][y]);
+        }
+    }
+    int col;
+    printf("unesite koju cete kolonu\n");
+    scanf("%d", &col);
+
+    if (col <= 0 || col > cols)
+    {
+        printf("neispravan broj kolone\n");
+    }
+    else
+    {
+        if (isMatPalindrom(mat, rows, col))
+        {
+            printf("Kolona %d je polindrom ", col + 1);
+        }
+        else
+        {
+            printf("Kolona %d nije polindrom ", col + 1);
+        }
+    }
+    return 0;
+}
