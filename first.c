@@ -5,6 +5,8 @@
 #include <stdbool.h>
 #define MAX 10
 #include <limits.h>
+// return 0: Program se završio uspešno.
+// return 1: Program se završio neuspešno zbog greške.
 // Zadatak 1
 //  int main()
 //  {
@@ -2746,12 +2748,13 @@
 // }
 //==========================================================================================
 // #define MAX_SIZE 10
-// #include <limits.h>
-// #include <string.h>
-// #include <stdio.h>
+// // #include <limits.h>
+// // #include <string.h>
+// // #include <stdio.h>
 
 // void izbaci_sa_pocetka(int *niz, int *velicina)
 // {
+
 //     if (*velicina > 0)
 //     {
 //         for (int i = 0; i < *velicina - 1; i++)
@@ -2777,11 +2780,11 @@
 //     }
 //     return 0;
 // }
-// int najmanjiParniBroj(int *niz, int velicina)
+// int najmanjiParniBroj(int *niz, int *velicina)
 // {
 //     int min = INT_MAX;
 //     int postoji = 0;
-//     for (int i = 0; i < velicina; i++)
+//     for (int i = 0; i < *velicina; i++)
 //     {
 //         if (niz[i] % 2 == 0 && niz[i] < min)
 //         {
@@ -2791,11 +2794,18 @@
 //     }
 //     return postoji ? min : -1;
 // }
-// void meni(int *niz, int *velicina)
+
+// void meni(int *niz, int  *adresaVelicine)
 // {
 //     int opcija;
 //     do
 //     {
+//         printf("\n ovo je adresaVelicine trenutnog niza \n");
+//         for (int i = 0; i < *adresaVelicine; i++)
+//         {
+//             printf(" %d", niz[i]);
+//         }
+
 //         printf("\nMeni:\n");
 //         printf("1 - Izbaci prvi element\n");
 //         printf("2 - Proveri da li postoji parni broj\n");
@@ -2807,10 +2817,10 @@
 //         switch (opcija)
 //         {
 //         case 1:
-//             izbaci_sa_pocetka(niz, velicina);
+//             izbaci_sa_pocetka(niz, adresaVelicine);
 //             break;
 //         case 2:
-//             if (postojiParniBroj(niz, velicina))
+//             if (postojiParniBroj(niz, adresaVelicine))
 //             {
 //                 printf("postoji parni broj");
 //             }
@@ -2820,9 +2830,9 @@
 //             }
 //             break;
 //         case 3:
-//             if (najmanjiParniBroj(niz, *velicina) != -1)
+//             if (najmanjiParniBroj(niz, adresaVelicine) != -1)
 //             {
-//                 printf("Najmanji parni broj u nizu je: %d\n", najmanjiParniBroj(niz, *velicina));
+//                 printf("Najmanji parni broj u nizu je: %d\n", najmanjiParniBroj(niz, adresaVelicine));
 //             }
 //             else
 //             {
@@ -3040,53 +3050,327 @@
 //===========================================================================================
 // da li je kolona od matrice palindrom
 // gde god sam stavio col -1 to znaci da mi ispisuje kada unosim col da umesto sto bih uneo 0 to je 1
-int isMatPalindrom(int mat[MAX][MAX], int rows, int col)
-{
-    int isPalindrom = 1;
-    for (int i = 0; i < rows / 2; i++)
-    {
-        if (mat[i][col - 1] != mat[rows - 1 - i][col - 1])
-        {
-            printf(" ovo je %d", mat[i][col - 1]);
-            return isPalindrom = 0;
-        }
-    }
-    return isPalindrom;
-}
-int main()
-{
-    int mat[MAX][MAX];
-    int rows, cols;
-    printf("unesi duzinu matrice\n");
-    scanf("%d %d", &rows, &cols);
+// int isMatPalindrom(int mat[MAX][MAX], int rows, int col)
+// {
+//     int isPalindrom = 1;
+//     for (int i = 0; i < rows / 2; i++)
+//     {
+//         if (mat[i][col - 1] != mat[rows - 1 - i][col - 1])
+//         {
+//             printf(" ovo je %d", mat[i][col - 1]);
+//             return isPalindrom = 0;
+//         }
+//     }
+//     return isPalindrom;
+// }
+// int main()
+// {
+//     int mat[MAX][MAX];
+//     int rows, cols;
+//     printf("unesi duzinu matrice\n");
+//     scanf("%d %d", &rows, &cols);
 
-    printf("unesi elemente matrice\n");
+//     printf("unesi elemente matrice\n");
 
-    for (int i = 0; i < rows; i++)
-    {
-        for (int y = 0; y < cols; y++)
-        {
-            scanf("%d", &mat[i][y]);
-        }
-    }
-    int col;
-    printf("unesite koju cete kolonu\n");
-    scanf("%d", &col);
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int y = 0; y < cols; y++)
+//         {
+//             scanf("%d", &mat[i][y]);
+//         }
+//     }
+//     int col;
+//     printf("unesite koju cete kolonu\n");
+//     scanf("%d", &col);
 
-    if (col <= 0 || col > cols)
-    {
-        printf("neispravan broj kolone\n");
-    }
-    else
-    {
-        if (isMatPalindrom(mat, rows, col))
-        {
-            printf("Kolona %d je polindrom ", col + 1);
-        }
-        else
-        {
-            printf("Kolona %d nije polindrom ", col + 1);
-        }
-    }
-    return 0;
-}
+//     if (col <= 0 || col > cols)
+//     {
+//         printf("neispravan broj kolone\n");
+//     }
+//     else
+//     {
+//         if (isMatPalindrom(mat, rows, col))
+//         {
+//             printf("Kolona %d je polindrom ", col + 1);
+//         }
+//         else
+//         {
+//             printf("Kolona %d nije polindrom ", col + 1);
+//         }
+//     }
+//     return 0;
+// }
+//===========================================================================================
+// int isPalindrom(int mat[MAX][MAX], int rows, int col)
+// {
+//     int isPalindrom = 1;
+
+//     for (int i = 0; i < rows / 2; i++)
+//     {
+//         if (mat[i][col - 1] != mat[rows - i - 1][col - 1])
+//         {
+//             return isPalindrom = 0;
+//             break;
+//         }
+//     }
+//     return isPalindrom;
+// }
+
+// int main()
+// {
+//     int mat[MAX][MAX], rows, cols;
+
+//     printf("unesi duzinu matrice\n");
+//     scanf("%d %d", &rows, &cols);
+
+//     printf("unesi elemente matrice\n");
+
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int y = 0; y < cols; y++)
+//         {
+//             scanf("%d", &mat[i][y]);
+//         }
+//     }
+//     int col;
+
+//     printf("unesi koju ces kolonu izabrati za palindrom\n");
+//     scanf("%d", &col);
+
+//     if (col <= 0 || col > cols)
+//     {
+//         printf("Nemoguc broj kolone\n");
+//     }
+//     else
+//     {
+//         if (isPalindrom(mat, rows, col))
+//         {
+//             printf("Kolona %d je polindrom ", col);
+//         }
+//         else
+//         {
+//             printf("kolona %d nije palindrom", col);
+//         }
+//     }
+//     return 0;
+// }
+//===========================================================================================
+// izbaci sa pocetka
+
+// int izbaciSaPocetka(int *niz, int *duzina)
+// {
+//     if (duzina > 0)
+//     {
+//         for (int i = 0; i < *duzina - 1; i++)
+//         {
+//             niz[i] = niz[i + 1];
+//         }
+//         (*duzina)--;
+//         printf("prvi element je izbacen\n");
+//     }
+//     else
+//     {
+//         printf("niz je prazan \n");
+//     }
+
+//     return 0;
+// }
+
+// int meni(int *niz, int *duzina)
+// {
+//     int opcija;
+//     do
+//     {
+//         printf("\n");
+//         printf("trenutni niz\n");
+//         for (int i = 0; i < *duzina; i++)
+//         {
+//             printf(" %d", niz[i]);
+//         }
+//         printf("\n");
+//         printf("unesi opciju koju zelis\n");
+//         printf("1 - izbaci prvi broj u nizu\n");
+//         printf("0 izlaz\n");
+//         scanf("%d", &opcija);
+//         printf("ovo je izbaceni niz sad\n");
+
+//         if (*duzina == 0)
+//         {
+//             printf("niz je prazan program je zavrsen\n");
+//             break;
+//         }
+//         switch (opcija)
+//         {
+//         case 1:
+//             izbaciSaPocetka(niz, duzina);
+//             break;
+//         case 0:
+//             printf("izlaz iz programa\n");
+//             break;
+//         default:
+//             printf("izabrali ste ne postojecu funkciju\n");
+//             break;
+//         }
+//     } while (opcija != 0);
+//     return 0;
+// }
+// int main()
+// {
+//     int niz[MAX], duzina;
+//     printf("unesi duzinu niza\n");
+//     scanf("%d", &duzina);
+
+//     if (duzina <= 0 || duzina > MAX)
+//     {
+//         printf("nevalidna duzina niza");
+//         return 1;
+//     }
+
+//     printf("uensi elemente niza\n");
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         scanf("%d", &niz[i]);
+//     }
+
+//     meni(niz, &duzina);
+//     return 0;
+// }
+// 7878787887{}1=========================================== -->niz////////////////////////////////
+// 7878787888{}2===========================================
+// 7878787889{}3===========================================
+
+// 342342432{}5 --> b
+// void change(int *a, int *niz)
+// {
+//     *a = 10;
+//     *niz = 30;
+// }
+// int main()
+// {
+//     int b = 5;
+
+//     int niz[10] = {1, 2, 3, 4, 5};
+//     // printf("%d\n", b);
+
+//     change(&b, &niz[2]);
+
+//     printf("%d\n", b);
+//     for (int i = 0; i < 10; i++)
+//     {
+//         printf("%d\n", niz[i]);
+//     }
+// }
+//=======================================================================================
+// int parniBrojevi(int *niz, int *velicina)
+// {
+//     int isEven = 0;
+//     for (int i = 0; i < *velicina; i++)
+//     {
+//         if (niz[i] % 2 == 0)
+//         {
+//             isEven = 1;
+//         }
+//     }
+//     if (isEven)
+//     {
+//         printf("ima parnih");
+//     }
+//     else
+//     {
+//         printf("nema parnih");
+//     }
+//     return 0;
+// }
+
+// int izbaciElement(int *niz, int *velicina)
+// {
+//     if (*velicina > 0)
+//     {
+//         for (int i = 0; i < *velicina - 1; i++)
+//         {
+//             niz[i] = niz[i + 1];
+//         }
+//         (*velicina)--;
+//         printf("izbacen prvi element\n");
+//     }
+//     else
+//     {
+//         printf("niz je prazan");
+//     }
+//     return 0;
+// }
+
+// int najmanjiParni(int *niz, int *velicina)
+// {
+//     int min = INT_MAX;
+//     for (int i = 0; i < *velicina; i++)
+//     {
+//         if (niz[i] % 2 == 0 && niz[i] < min)
+//         {
+//             min = niz[i];
+//         }
+//     }
+//     if (min)
+//     {
+//         printf("najmanji parni broj je %d", min);
+//     }
+//     else
+//     {
+//         printf("nema parnog najmanjeg broja");
+//     }
+//     return 0;
+// }
+// int meni(int *niz, int *velicina)
+// {
+//     int opcija;
+
+//     do
+//     {
+//         printf("\n unesi opciju \n");
+//         printf("1 - da li postoji parni broj\n");
+//         printf("2 - izbaci prvi element iz liste\n");
+//         printf("3 - najmanji parni broj\n");
+//         printf("0 - izlaz\n");
+//         scanf("%d", &opcija);
+//         if (velicina == 0)
+//         {
+//             printf("niz je prazan izlaz");
+//             break;
+//         }
+//         switch (opcija)
+//         {
+//         case 1:
+//             parniBrojevi(niz, velicina);
+//             break;
+//         case 2:
+//             izbaciElement(niz, velicina);
+//             break;
+//         case 3:
+//             najmanjiParni(niz, velicina);
+//             break;
+//         default:
+//             printf("ne postoji ta opcija");
+//             break;
+//         }
+//     } while (opcija != 0);
+//     return 0;
+// }
+// int main()
+// {
+//     int niz[MAX], duzina;
+//     printf("unesi duzinu");
+//     scanf("%d", &duzina);
+//     printf("unesi elemente");
+
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         scanf("%d", &niz[i]);
+//     }
+
+//     if (duzina == 0)
+//     {
+//         printf("neispravna duzina");
+//         return 1;
+//     }
+//     meni(niz, &duzina);
+// }
