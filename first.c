@@ -3048,58 +3048,7 @@
 //     }
 // }
 //===========================================================================================
-// da li je kolona od matrice palindrom
-// gde god sam stavio col -1 to znaci da mi ispisuje kada unosim col da umesto sto bih uneo 0 to je 1
-// int isMatPalindrom(int mat[MAX][MAX], int rows, int col)
-// {
-//     int isPalindrom = 1;
-//     for (int i = 0; i < rows / 2; i++)
-//     {
-//         if (mat[i][col - 1] != mat[rows - 1 - i][col - 1])
-//         {
-//             printf(" ovo je %d", mat[i][col - 1]);
-//             return isPalindrom = 0;
-//         }
-//     }
-//     return isPalindrom;
-// }
-// int main()
-// {
-//     int mat[MAX][MAX];
-//     int rows, cols;
-//     printf("unesi duzinu matrice\n");
-//     scanf("%d %d", &rows, &cols);
 
-//     printf("unesi elemente matrice\n");
-
-//     for (int i = 0; i < rows; i++)
-//     {
-//         for (int y = 0; y < cols; y++)
-//         {
-//             scanf("%d", &mat[i][y]);
-//         }
-//     }
-//     int col;
-//     printf("unesite koju cete kolonu\n");
-//     scanf("%d", &col);
-
-//     if (col <= 0 || col > cols)
-//     {
-//         printf("neispravan broj kolone\n");
-//     }
-//     else
-//     {
-//         if (isMatPalindrom(mat, rows, col))
-//         {
-//             printf("Kolona %d je polindrom ", col + 1);
-//         }
-//         else
-//         {
-//             printf("Kolona %d nije polindrom ", col + 1);
-//         }
-//     }
-//     return 0;
-// }
 //===========================================================================================
 // int isPalindrom(int mat[MAX][MAX], int rows, int col)
 // {
@@ -3373,4 +3322,221 @@
 //         return 1;
 //     }
 //     meni(niz, &duzina);
+// }
+//=======================================================================================
+// int duzinaStringa(char *ime)
+// {
+//     int duzina = 0;
+//     while (ime[duzina] != '\0')
+//     {
+//         duzina++;
+//     }
+//     return duzina;
+// }
+// int isPalindrom(char *ime)
+// {
+//     int isPalindrom = 1;
+
+//     for (int i = 0; ime[i] != '\0'; i++)
+//     {
+//         printf("a %d a", ime[i]);
+//         if (ime[i] != ime[duzinaStringa(ime) - i - 1])
+//         {
+//             isPalindrom = 0;
+//             break;
+//         }
+//     }
+//     return isPalindrom;
+// }
+// int main()
+// {
+//     char ime[MAX];
+//     printf("unesi ime\n");
+//     scanf("%s", ime);
+//     printf("%d", isPalindrom(ime));
+//     if (isPalindrom(ime) == 1)
+//     {
+//         printf("palindrom je\n");
+//     }
+//     else
+//     {
+//         printf("nije\n");
+//     }
+// }
+//=======================================================================================
+// // da li je kolona od matrice palindrom
+// // gde god sam stavio col -1 to znaci da mi ispisuje kada unosim col da umesto sto bih uneo 0 to je 1
+// int isMatPalindrom(int mat[MAX][MAX], int rows, int col)
+// {
+//     int isPalindrom = 1;
+//     for (int i = 0; i < rows / 2; i++)
+//     {
+//         if (mat[i][col - 1] != mat[rows - 1 - i][col - 1])
+//         {
+//             printf(" ovo je %d", mat[i][col - 1]);
+//             return isPalindrom = 0;
+//         }
+//     }
+//     return isPalindrom;
+// }
+
+// int *razlikaSkupova(int mat[MAX][MAX], int rows, int col1, int col2, int *duzina)
+// {
+//     int isRazlika = 1;
+//     int static niz[MAX];
+//     for (int i = 0; i < rows; i++)
+//     {
+//         isRazlika = 1;
+//         for (int y = 0; y < rows; y++)
+//         {
+//             if (mat[i][col1] == mat[y][col2])
+//             {
+//                 isRazlika = 0;
+//                 break;
+//             }
+//         }
+
+//         if (isRazlika)
+//         {
+//             niz[*duzina] = mat[icol1];
+//             (*duzina)++;
+//         }
+//     }][
+//     return niz;
+// }
+// int main()
+// {
+//     int mat[MAX][MAX];
+//     int rows, cols, col1, col2;
+//     printf("unesi duzinu matrice\n");
+//     scanf("%d %d", &rows, &cols);
+
+//     printf("unesi elemente matrice\n");
+
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int y = 0; y < cols; y++)
+//         {
+//             scanf("%d", &mat[i][y]);
+//         }
+//     }
+//     int col;
+//     printf("unesite koju cete kolonu\n");
+//     scanf("%d", &col);
+
+//     if (col <= 0 || col > cols)
+//     {
+//         printf("neispravan broj kolone\n");
+//     }
+//     else
+//     {
+//         if (isMatPalindrom(mat, rows, col))
+//         {
+//             printf("Kolona %d je polindrom ", col + 1);
+//         }
+//         else
+//         {
+//             printf("Kolona %d nije polindrom ", col + 1);
+//         }
+//     }
+
+//     printf("unesi prvu kolonu ");
+//     scanf("%d", &col1);
+//     printf("unesi drugu kolonu ");
+//     scanf("%d", &col2);
+//     int duzina = 0;
+//     int *niz = razlikaSkupova(mat, rows, col1, col2, &duzina);
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         printf("%d\n", niz[i]);
+//     }
+
+//     return 0;
+// }
+//=======================================================================================
+
+// int isPalindrom(int mat[MAX][MAX], int rows, int col)
+// {
+//     int isPalindrom = 1;
+
+//     for (int i = 0; i < rows / 2; i++)
+//     {
+//         if (mat[i][col - 1] != mat[rows - i - 1][col - 1])
+//         {
+//             isPalindrom = 0;
+//             break;
+//         }
+//     }
+//     return isPalindrom;
+// }
+
+// int *razlika(int mat[MAX][MAX], int rows, int cols, int col1, int col2, int *duzina)
+// {
+//     int isRazlika = 1;
+//     int static niz[MAX];
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int y = 0; y < cols; y++)
+//         {
+//             if (mat[i][col1] == mat[y][col2])
+//             {
+//                 isRazlika = 0;
+//             }
+//         }
+//         if (isRazlika)
+//         {
+//             niz[*duzina] = mat[i][col1];
+//             (*duzina)++;
+//         }
+//     }
+//     return niz;
+// }
+// int main()
+// {
+//     int mat[MAX][MAX];
+//     int rows, cols, col1, col2, duzina = 0;
+//     printf("unesi duzinu matrice\n");
+//     scanf("%d %d", &rows, &cols);
+
+//     printf("unesi elemente matrice\n");
+
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int y = 0; y < cols; y++)
+//         {
+//             scanf("%d", &mat[i][y]);
+//         }
+//     }
+//     int col;
+//     printf("unesite koju cete kolonu\n");
+//     scanf("%d", &col);
+
+//     if (col <= 0 || col > cols)
+//     {
+//         printf("neispravan broj kolone\n");
+//     }
+//     else
+//     {
+//         if (isPalindrom(mat, rows, col))
+//         {
+//             printf("Kolona %d je polindrom \n", col);
+//         }
+//         else
+//         {
+//             printf("Kolona %d nije polindrom \n", col);
+//         }
+//     }
+//     printf("\n");
+//     printf("unesi prvu kolonu \n");
+//     scanf("%d", &col1);
+//     printf("unesi drugu kolonu \n");
+//     scanf("%d", &col2);
+//     int *niz = razlika(mat, rows, cols, col1, col2, &duzina);
+
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         printf("%d", niz[i]);
+//     }
+
+//     return 0;
 // }
