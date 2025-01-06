@@ -3398,7 +3398,7 @@
 
 //         if (isRazlika)
 //         {
-//             niz[*duzina] = mat[icol1];
+//             niz[*duzina] = mat[col1];
 //             (*duzina)++;
 //         }
 //     }][
@@ -3540,3 +3540,97 @@
 
 //     return 0;
 // }
+//=====================================================================================
+// void ispisiNiz(int niz[], int velicina)
+// {
+//     for (int i = 0; i < velicina; i++)
+//     {
+//         printf("%d ", niz[i]);
+//     }
+//     printf("\n");
+// }
+// int izbaciElement(int *niz, int *velicina, int *pozicija)
+// {
+
+//     for (int i = *pozicija; i < *velicina - 1; i++)
+//     {
+//         niz[i] = niz[i + 1];
+//     }
+//     (*velicina)--;
+//     printf("Element na poziciji %d je izbačen.\n", *pozicija);
+
+//     return 0;
+// }
+// int main()
+// {
+//     int niz[MAX] = {1, 2, 3, 4, 5};              // Početni niz
+//     int velicina = sizeof(niz) / sizeof(niz[0]); // Broj elemenata u nizu
+
+//     printf("Početni niz: ");
+//     ispisiNiz(niz, velicina);
+
+//     int pozicija;
+//     printf("Unesite poziciju elementa za izbacivanje (0-%d): ", velicina - 1);
+//     scanf("%d", &pozicija);
+
+//     izbaciElement(niz, &velicina, &pozicija);
+
+//     printf("Niz nakon izbacivanja: ");
+//     ispisiNiz(niz, velicina);
+
+//     return 0;
+// }
+//===================================================================================
+// int main() {
+//  char rec[100];
+// int samoglasnici = 0, suglasnici = 0;
+
+// printf("Unesite reč: ");
+// scanf("%s", rec);
+
+//  for (int i = 0; rec[i] != '\0'; i++) {
+//    char c = tolower(rec[i]); // Pretvaranje u mala slova za lakšu proveru
+
+//  if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+//    samoglasnici++;
+//} else if ((c >= 'a' && c <= 'z')) {
+//   suglasnici++;
+//}
+//}
+
+// printf("Broj samoglasnika: %d\n", samoglasnici);
+// printf("Broj suglasnika: %d\n", suglasnici);
+
+// return 0;
+//}
+//================================================================================
+
+int main()
+{
+    char recenica[200];
+    int brojReci = 0;
+    int uReci = 0;
+
+    printf("Unesite rečenicu: ");
+    fgets(recenica, sizeof(recenica), stdin);
+
+    for (int i = 0; recenica[i] != '\0'; i++)
+    {
+        // Ako naiđemo na razmak ili kraj rečenice, a prethodni karakter nije razmak
+        if (recenica[i] == ' ' || recenica[i] == '\n')
+        {
+            if (!uReci == 0)
+            {
+                brojReci++;
+                uReci = 1;
+            }
+        }
+        else
+        {
+            uReci = 0;
+        }
+    }
+    printf("Broj reči: %d\n", brojReci);
+
+    return 0;
+}
