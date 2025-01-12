@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <math.h>
 #include <stdbool.h>
-#define MAX 10
+#define MAX 3
 #include <limits.h>
 // return 0: Program se završio uspešno.
 // return 1: Program se završio neuspešno zbog greške.
@@ -3865,68 +3865,124 @@
 //     }
 // }
 //===============================================================================
+// // 1 i 2 zadatak sa kolokvijuma
+// void znak(char slovo)
+// {
+//     if (isalpha(slovo))
+//     {
+//         printf("znak %c je slovo\n", slovo);
+//     }
+//     else
+//     {
+//         printf("znak  %c nije slovo\n", slovo);
+//     }
+// }
 
-void znak(char slovo)
+// int addToArray(int niz[], int *duzina, int element, int pozicija)
+// {
+//     for (int i = *duzina; i > pozicija; i--)
+//     {
+//         niz[i] = niz[i - 1];
+//     }
+//     niz[pozicija] = element;
+//     (*duzina)++;
+
+//     return 0;
+// }
+// int sum(int *array, int *suma, int duzinaNiza)
+// {
+//     for (int i = 0; i < duzinaNiza; i++)
+//     {
+//         *suma += array[i];
+//     }
+//     return 0;
+// }
+// void zadatak_2()
+// {
+//     char slovo;
+//     printf("unesi znak\n");
+//     scanf("%c", &slovo);
+//     znak(slovo);
+
+//     printf("unesi duzinu niza\n");
+//     int duzina, element, pozicija;
+//     scanf("%d", &duzina);
+//     printf("unesi elemente niza \n");
+//     int niz[duzina];
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         scanf("%d", &niz[i]);
+//     }
+//     printf("\n trenutni niz \n");
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         printf(" %d", niz[i]);
+//     }
+//     printf("unesite element koji zelite da dodate\n");
+//     scanf("%d", &element);
+//     printf("unesite na koju poziciju zelite da ubacite element od (0- %d)\n", duzina);
+//     scanf("%d", &pozicija);
+
+//     addToArray(niz, &duzina, element, pozicija);
+
+//     printf("\n niz posle dodavanja \n");
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         printf(" %d", niz[i]);
+//     }
+//     int duzinaZaSumu, suma = 0;
+//     printf("unesi duzinu niza za sumiranje cifara\n");
+//     scanf("%d", &duzinaZaSumu);
+//     int array[duzinaZaSumu];
+//     printf("unesi elemente niza \n");
+//     for (int i = 0; i < duzinaZaSumu; i++)
+//     {
+//         scanf("%d", &array[i]);
+//     }
+//     sum(array, &suma, duzinaZaSumu);
+//     printf("ovo je suma %d", suma);
+// }
+
+// int main()
+// {
+//     zadatak_2();
+//     return 0;
+// }
+//================================================================================
+
+int opadaLi(int mat[MAX][MAX], int rows, int cols)
 {
-    if (isalpha(slovo))
+    int isOpadajuc = 1;
+    for (int i = 0; i < rows; i++)
     {
-        printf("znak %c je slovo\n", slovo);
+        for (int y = 0; y < cols; y++)
+        {
+
+            if ((i + 1) < rows && mat[i][y] > mat[i + 1][0])
+            {
+                isOpadajuc = 0;
+                break;
+            }
+            if ((y + 1) < cols && mat[i][y] > mat[i][y + 1])
+            {
+                isOpadajuc = 0;
+                break;
+            }
+        }
+    }
+
+    if (isOpadajuc)
+    {
+        printf("ne opada \n");
     }
     else
     {
-        printf("znak  %c nije slovo\n", slovo);
+        printf("opada \n");
     }
+    return isOpadajuc;
 }
-
-int addToArray(int niz[], int *duzina, int element, int pozicija)
-{
-    for (int i = *duzina; i > pozicija; i--)
-    {
-        niz[i] = niz[i - 1];
-    }
-    niz[pozicija] = element;
-    (*duzina)++;
-
-    return 0;
-}
-
-void zadatak_2()
-{
-    char slovo;
-    printf("unesi znak\n");
-    scanf("%c", &slovo);
-    znak(slovo);
-
-    printf("unesi duzinu niza\n");
-    int duzina, element, pozicija;
-    scanf("%d", &duzina);
-    printf("unesi elemente niza \n");
-    int niz[duzina];
-    for (int i = 0; i < duzina; i++)
-    {
-        scanf("%d", &niz[i]);
-    }
-    printf("\n trenutni niz \n");
-    for (int i = 0; i < duzina; i++)
-    {
-        printf(" %d", niz[i]);
-    }
-    printf("unesite element koji zelite da dodate\n");
-    scanf("%d", &element);
-    printf("unesite na koju poziciju zelite da ubacite element od (0- %d)\n", duzina);
-    scanf("%d", &pozicija);
-
-    addToArray(niz, &duzina, element, pozicija);
-
-    printf("\n niz posle dodavanja \n");
-    for (int i = 0; i < duzina; i++)
-    {
-        printf(" %d", niz[i]);
-    }
-}
-
 int main()
 {
-    zadatak_2();
-    return 0;
+    int mat[MAX][MAX] = {{1, 2, 33}, {9, 55, 57}, {66, 76, 3333}}, rows = 3, cols = 3;
+    opadaLi(mat, rows, cols);
 }
