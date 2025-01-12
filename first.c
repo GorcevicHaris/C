@@ -3604,33 +3604,329 @@
 // return 0;
 //}
 //================================================================================
+// broj recenica
+// int main()
+// {
+//     char recenica[200];
+//     int brojReci = 0;
+//     int uReci = 0;
+
+//     printf("Unesite rečenicu: ");
+//     fgets(recenica, sizeof(recenica), stdin);
+
+//     for (int i = 0; recenica[i] != '\0'; i++)
+//     {
+//         if (recenica[i] == ' ' || recenica[i] == '\n')
+//         {
+//             if (!uReci == 0)
+//             {
+//                 brojReci++;
+//                 uReci = 1;
+//             }
+//         }
+//         else
+//         {
+//             uReci = 0;
+//         }
+//     }
+//     printf("Broj reči: %d\n", brojReci);
+
+//     return 0;
+// }
+//======================================================================================
+// do h
+// int main()
+// {
+//     char recenica[200];
+//     int brojReci = 0;
+//     int uReci = 0;
+
+//     printf("Unesite rečenicu: ");
+//     fgets(recenica, sizeof(recenica), stdin);
+
+//     for (int i = 0; recenica[i] != '\0'; i++)
+//     {
+//         // Ako naiđemo na razmak ili kraj rečenice, a prethodni karakter nije razmak
+//         if (recenica[i] == 'h')
+//         {
+//             brojReci++;
+//         }
+//     }
+//     printf("Broj reči: %d\n", brojReci);
+//     return 0;
+// }
+//===============================================================================
+// int parniBrojevi(int *niz, int *duzina)
+// {
+//     int isEven = 0;
+//     for (int i = 0; i < *duzina; i++)
+//     {
+//         if (niz[i] % 2 == 0)
+//         {
+//             isEven = 1;
+//         }
+//     }
+//     if (isEven)
+//     {
+//         printf("imamo parni\n");
+//     }
+//     else
+//     {
+//         printf("nemamo\n");
+//     }
+//     return isEven;
+// }
+
+// int izbaciEl(int *niz, int *velicina)
+// {
+//     if (*velicina > 0)
+//     {
+//         for (int i = 0; i < *velicina - 1; i++)
+//         {
+//             niz[i] = niz[i + 1];
+//         }
+//         (*velicina)--;
+//         printf("izbacen je prvi el\n");
+//     }
+//     else
+//     {
+//         printf("niz je prazan;\n");
+//     }
+//     return 0;
+// }
+
+// int najmanjiParni(int *niz, int *duzina)
+// {
+//     int min = INT_MAX;
+
+//     for (int i = 0; i < *duzina; i++)
+//     {
+//         if (niz[i] % 2 == 0 && niz[i] < min)
+//         {
+//             min = niz[i];
+//             break;
+//         }
+//     }
+//     if (min)
+//     {
+//         printf("najmanji parni broj je %d\n", min);
+//     }
+//     else
+//     {
+//         printf("nemamo parni broj\n");
+//     }
+//     return 0;
+// }
+// int meni(int *niz, int *duzina)
+// {
+
+//     int opcija;
+//     do
+//     {
+//         printf("pocetni niz\n");
+//         for (int i = 0; i < *duzina; i++)
+//         {
+//             printf("%d", niz[i]);
+//         }
+//         printf("\n unesti opciju \n");
+//         printf("1 - izbaci element\n");
+//         printf("2 - da li ima parni\n");
+//         printf("3 - najmanjo parni\n");
+//         printf("0 - izlaz\n");
+//         scanf("%d", &opcija);
+//         switch (opcija)
+//         {
+//         case 0:
+//             printf("izlaz\n");
+//             break;
+//         case 1:
+//             izbaciEl(niz, duzina);
+//             break;
+//         case 2:
+//             parniBrojevi(niz, duzina);
+//             break;
+//         case 3:
+//             najmanjiParni(niz, duzina);
+//             break;
+//         default:
+//             printf("ne postoji ta opcija\n");
+//             break;
+//         }
+//     } while (opcija != 0);
+//     return 0;
+// }
+// void zadatak2()
+// {
+//     int niz[MAX], duzina;
+//     printf("unesi duzinu niza\n");
+//     scanf("%d", &duzina);
+
+//     printf("unesi elemente niza\n");
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         scanf("%d", &niz[i]);
+//     }
+
+//     if (duzina < 1)
+//     {
+//         printf("neispravno uneta duzina\n");
+//     }
+//     meni(niz, &duzina);
+// }
+// int main()
+// {
+//     zadatak2();
+//     return 0;
+// }
+//===============================================================================
+// int isPalindrom(int niz[MAX][MAX], int *rows, int *col)
+// {
+//     int isPalindrom = 1;
+
+//     for (int i = 0; i < *rows / 2; i++)
+//     {
+//         if (niz[i][*(col)-1] != niz[*rows - i - 1][*(col)-1])
+//         {
+//             isPalindrom = 0;
+//             break;
+//         }
+//     }
+//     if (isPalindrom)
+//     {
+//         printf("palindrom je\n");
+//     }
+//     else
+//     {
+//         printf("nije palindrom \n");
+//     }
+//     return isPalindrom;
+// }
+
+// int *razlika(int mat[MAX][MAX], int *rows, int *cols, int *col1, int *col2, int *duzina)
+// {
+//     int static niz[MAX];
+//     int isRazlika = 1;
+
+//     for (int i = 0; i < *rows; i++)
+//     {
+//         for (int y = 0; y < *cols; y++)
+//         {
+//             if (niz[i][col1] == niz[y][col2])
+//             {
+//                 isRazlika = 0;
+//                 break;
+//             }
+//         }
+//         if (isRazlika)
+//         {
+//             niz[*duzina] = mat[i][*col1];
+//             (*duzina)++;
+//         }
+//     }
+//     return niz;
+// }
+// int main()
+// {
+//     int mat[MAX][MAX], rows, cols, col, col1, col2, duzina = 0;
+//     printf("unesi duzina matrice\n");
+//     scanf("%d %d", &rows, &cols);
+
+//     printf("unesi elemente matrice\n");
+
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int y = 0; y < cols; y++)
+//         {
+//             scanf("%d", &mat[i][y]);
+//         }
+//     }
+
+//     printf("unesi kolonu za dati palindrom\n");
+//     scanf("%d", &col);
+//     if (col < 1 && col > cols)
+//     {
+//         printf("neispravna kolona");
+//     }
+//     else
+//     {
+//         isPalindrom(mat, &rows, &col);
+//     }
+//     printf("unesi prvu kolonu za razliku\n");
+//     scanf("%d", &col1);
+
+//     printf("unesi drugu kolonu za razliku\n");
+//     scanf("%d", &col2);
+
+//     int *niz = razlika(mat, &rows, &cols, &col1, &col2, &duzina);
+
+//     for (int i = 0; i < duzina; i++)
+//     {
+//         printf("%d", niz[i]);
+//     }
+// }
+//===============================================================================
+
+void znak(char slovo)
+{
+    if (isalpha(slovo))
+    {
+        printf("znak %c je slovo\n", slovo);
+    }
+    else
+    {
+        printf("znak  %c nije slovo\n", slovo);
+    }
+}
+
+int addToArray(int niz[], int *duzina, int element, int pozicija)
+{
+    for (int i = *duzina; i > pozicija; i--)
+    {
+        niz[i] = niz[i - 1];
+    }
+    niz[pozicija] = element;
+    (*duzina)++;
+
+    return 0;
+}
+
+void zadatak_2()
+{
+    char slovo;
+    printf("unesi znak\n");
+    scanf("%c", &slovo);
+    znak(slovo);
+
+    printf("unesi duzinu niza\n");
+    int duzina, element, pozicija;
+    scanf("%d", &duzina);
+    printf("unesi elemente niza \n");
+    int niz[duzina];
+    for (int i = 0; i < duzina; i++)
+    {
+        scanf("%d", &niz[i]);
+    }
+    printf("\n trenutni niz \n");
+    for (int i = 0; i < duzina; i++)
+    {
+        printf(" %d", niz[i]);
+    }
+    printf("unesite element koji zelite da dodate\n");
+    scanf("%d", &element);
+    printf("unesite na koju poziciju zelite da ubacite element od (0- %d)\n", duzina);
+    scanf("%d", &pozicija);
+
+    addToArray(niz, &duzina, element, pozicija);
+
+    printf("\n niz posle dodavanja \n");
+    for (int i = 0; i < duzina; i++)
+    {
+        printf(" %d", niz[i]);
+    }
+}
 
 int main()
 {
-    char recenica[200];
-    int brojReci = 0;
-    int uReci = 0;
-
-    printf("Unesite rečenicu: ");
-    fgets(recenica, sizeof(recenica), stdin);
-
-    for (int i = 0; recenica[i] != '\0'; i++)
-    {
-        // Ako naiđemo na razmak ili kraj rečenice, a prethodni karakter nije razmak
-        if (recenica[i] == ' ' || recenica[i] == '\n')
-        {
-            if (!uReci == 0)
-            {
-                brojReci++;
-                uReci = 1;
-            }
-        }
-        else
-        {
-            uReci = 0;
-        }
-    }
-    printf("Broj reči: %d\n", brojReci);
-
+    zadatak_2();
     return 0;
 }
