@@ -3949,7 +3949,7 @@
 //     return 0;
 // }
 //================================================================================
-
+// zadatak 3 sa kolokvijuma
 int opadaLi(int mat[MAX][MAX], int rows, int cols)
 {
     int isOpadajuc = 1;
@@ -4002,9 +4002,25 @@ int uzastopnoParni(int mat[MAX][MAX], int rows, int cols)
     printf("%d", parni);
     return 0;
 }
+
+int obodMatrice(int mat[MAX][MAX], int rows, int cols)
+{
+    for (int i = 0; i < rows; i++)
+    {
+        printf("%d\n", mat[0][i]);
+        printf("%d\n", mat[rows - 1][i]);
+    }
+    for (int i = 1; i < rows - 1; i++)
+    {
+        printf("%d\n", mat[i][0]);
+        printf("%d", mat[i][rows - 1]);
+    }
+    return 0;
+}
 int main()
 {
     int mat[MAX][MAX] = {{1, 2, 33}, {9, 55, 57}, {66, 75, 4}}, rows = 3, cols = 3;
     // opadaLi(mat, rows, cols);
     // uzastopnoParni(mat, rows, cols);
+    obodMatrice(mat, rows, cols);
 }
