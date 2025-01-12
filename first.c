@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <math.h>
 #include <stdbool.h>
-#define MAX 3
+#define MAX 100
 #include <limits.h>
 // return 0: Program se završio uspešno.
 // return 1: Program se završio neuspešno zbog greške.
@@ -3950,77 +3950,98 @@
 // }
 //================================================================================
 // zadatak 3 sa kolokvijuma
-int opadaLi(int mat[MAX][MAX], int rows, int cols)
-{
-    int isOpadajuc = 1;
-    for (int i = 0; i < rows; i++)
-    {
-        for (int y = 0; y < cols; y++)
-        {
 
-            if ((i + 1) < rows && mat[i][y] > mat[i + 1][0])
-            {
-                isOpadajuc = 0;
-                break;
-            }
-            if ((y + 1) < cols && mat[i][y] > mat[i][y + 1])
-            {
-                isOpadajuc = 0;
-                break;
-            }
-        }
-    }
+// int opadaLi(int mat[MAX][MAX], int rows, int cols)
+// {
+//     int isOpadajuc = 1;
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int y = 0; y < cols; y++)
+//         {
+//             if ((i + 1) < rows && mat[i][y] > mat[i + 1][0])
+//             {
+//                 isOpadajuc = 0;
+//                 break;
+//             }
+//             if ((y + 1) < cols && mat[i][y] > mat[i][y + 1])
+//             {
+//                 isOpadajuc = 0;
+//                 break;
+//             }
+//         }
+//     }
 
-    if (isOpadajuc)
-    {
-        printf("ne opada \n");
-    }
-    else
-    {
-        printf("opada \n");
-    }
-    return isOpadajuc;
-}
+//     if (isOpadajuc)
+//     {
+//         printf("ne opada \n");
+//     }
+//     else
+//     {
+//         printf("opada \n");
+//     }
+//     return isOpadajuc;
+// }
 
-int uzastopnoParni(int mat[MAX][MAX], int rows, int cols)
-{
-    int parni = 0;
-    for (int i = 0; i < rows; i++)
-    {
-        for (int y = 0; y < cols; y++)
-        {
-            if (mat[i][y] % 2 == 0)
-            {
-                parni++;
-            }
-            else
-            {
-                parni = 0;
-            }
-        }
-    }
-    printf("%d", parni);
-    return 0;
-}
+// int uzastopnoParni(int mat[MAX][MAX], int rows, int cols)
+// {
+//     int parni = 0;
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int y = 0; y < cols; y++)
+//         {
+//             if (mat[i][y] % 2 == 0)
+//             {
+//                 parni++;
+//             }
+//             else
+//             {
+//                 parni = 0;
+//             }
+//         }
+//     }
+//     printf("%d", parni);
+//     return 0;
+// }
 
-int obodMatrice(int mat[MAX][MAX], int rows, int cols)
-{
-    for (int i = 0; i < rows; i++)
-    {
-        printf("%d\n", mat[0][i]);
-        printf("%d\n", mat[rows - 1][i]);
-    }
-    for (int i = 1; i < rows - 1; i++)
-    {
-        printf("%d\n", mat[i][0]);
-        printf("%d", mat[i][rows - 1]);
-    }
-    return 0;
-}
-int main()
-{
-    int mat[MAX][MAX] = {{1, 2, 33}, {9, 55, 57}, {66, 75, 4}}, rows = 3, cols = 3;
-    // opadaLi(mat, rows, cols);
-    // uzastopnoParni(mat, rows, cols);
-    obodMatrice(mat, rows, cols);
-}
+// int obodMatrice(int mat[MAX][MAX], int rows, int cols)
+// {
+//     for (int i = 0; i < cols; i++)
+//     {
+//         printf("%d\n", mat[0][i]);
+//         printf("%d\n", mat[rows - 1][i]);
+//     }
+//     for (int i = 1; i < rows - 1; i++)
+//     {
+//         printf("%d\n", mat[i][0]);
+//         printf("%d\n", mat[i][cols - 1]);
+//     }
+//     return 0;
+// }
+
+// int main()
+// {
+//     int mat[MAX][MAX], rows, cols;
+
+//     printf("Unesite broj redova: ");
+//     scanf("%d", &rows);
+//     printf("Unesite broj kolona: ");
+//     scanf("%d", &cols);
+
+//     printf("Unesite elemente matrice:\n");
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < cols; j++)
+//         {
+//             printf("Element [%d][%d]: ", i, j);
+//             scanf("%d", &mat[i][j]);
+//         }
+//     }
+
+//     opadaLi(mat, rows, cols);
+//     printf("ovo je broj koliko ima uzastopnih parnih brojeva\n");
+//     uzastopnoParni(mat, rows, cols);
+//     printf("\nobod matrice je \n");
+//     obodMatrice(mat, rows, cols);
+
+//     return 0;
+// }
