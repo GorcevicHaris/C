@@ -3981,8 +3981,30 @@ int opadaLi(int mat[MAX][MAX], int rows, int cols)
     }
     return isOpadajuc;
 }
+
+int uzastopnoParni(int mat[MAX][MAX], int rows, int cols)
+{
+    int parni = 0;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int y = 0; y < cols; y++)
+        {
+            if (mat[i][y] % 2 == 0)
+            {
+                parni++;
+            }
+            else
+            {
+                parni = 0;
+            }
+        }
+    }
+    printf("%d", parni);
+    return 0;
+}
 int main()
 {
-    int mat[MAX][MAX] = {{1, 2, 33}, {9, 55, 57}, {66, 76, 3333}}, rows = 3, cols = 3;
-    opadaLi(mat, rows, cols);
+    int mat[MAX][MAX] = {{1, 2, 33}, {9, 55, 57}, {66, 75, 4}}, rows = 3, cols = 3;
+    // opadaLi(mat, rows, cols);
+    // uzastopnoParni(mat, rows, cols);
 }
